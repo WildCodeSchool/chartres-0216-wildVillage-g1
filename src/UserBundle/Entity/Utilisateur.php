@@ -24,7 +24,7 @@ class Utilisateur
     /**
      * @var int
      *
-     * @ORM\Column(name="id_fos_user", type="integer", nullable=true)
+     * @ORM\OneToOne(targetEntity="UserBundle\Entity\User", cascade={"persist"})
      */
     private $idFosUser;
 

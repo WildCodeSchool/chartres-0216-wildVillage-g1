@@ -24,14 +24,14 @@ class Message
     /**
      * @var string
      *
-     * @ORM\Column(name="Expéditeur", type="string", length=25, nullable=true)
+     * @ORM\OneToOne(targetEntity="UserBundle\Entity\Utilisateur", cascade={"persist"})
      */
     private $expéditeur;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Destinataire", type="string", length=25, nullable=true)
+     * @ORM\OneToOne(targetEntity="UserBundle\Entity\Utilisateur", cascade={"persist"})
      */
     private $destinataire;
 

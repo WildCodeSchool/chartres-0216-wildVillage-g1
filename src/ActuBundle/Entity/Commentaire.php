@@ -24,14 +24,14 @@ class Commentaire
     /**
      * @var int
      *
-     * @ORM\Column(name="id_post", type="integer", nullable=true)
+     * @ORM\OneToOne(targetEntity="ActuBundle\Entity\Post", cascade={"persist"})
      */
     private $idPost;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Auteur", type="string", length=25, nullable=true)
+     * @ORM\OneToOne(targetEntity="UserBundle\Entity\Utilisateur", cascade={"persist"})
      */
     private $auteur;
 
