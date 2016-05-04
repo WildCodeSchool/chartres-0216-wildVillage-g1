@@ -26,7 +26,7 @@ class Message
      *
      * @ORM\OneToOne(targetEntity="UserBundle\Entity\Utilisateur", cascade={"persist"})
      */
-    private $expéditeur;
+    private $expediteur;
 
     /**
      * @var string
