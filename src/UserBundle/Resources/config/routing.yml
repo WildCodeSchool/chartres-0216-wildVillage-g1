@@ -1,3 +1,19 @@
-user_homepage:
-    path:     /user
-    defaults: { _controller: UserBundle:Default:index }
+user_login:
+    path:    /user/login
+    defaults: { _controller: UserBundle:Login:login }
+
+user_register:
+    path:    /user/register
+    defaults: { _controller: UserBundle:Registration:register }
+
+user_home:
+    path:    /user/home
+    defaults: { _controller: UserBundle:Home:home }
+
+user_friend:
+    path:    /user/friend
+    defaults: { _controller: UserBundle:Friend:friend }
+
+user_parameters:
+    path:    /user/parameters
+    defaults: { _controller: UserBundle:Parameters:parameters }
