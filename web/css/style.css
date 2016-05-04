@@ -1,0 +1,49 @@
+body {
+
+}
+
+/*--------------------------------------*/
+
+.bloc_principal {
+	padding-top: 80px;
+}
+
+/*--------------------------------------*/
+
+.section{
+	border: 1px solid black;
+	margin-top: 15px;
+}
+
+/*--------------------------------------*/
+
+.enregistrement_formulaire{
+	margin-top: 95px;
+}
+
+.enregistrement_formulaire .formulaire2{
+	margin-top: 55px;
+}
+
+.enregistrement_formulaire .obligatoire{
+	border: 1px solid red;
+}
+
+/*--------------------------------------*/
+
+.row_messagerie .form-group{
+	padding-top: 35px;
+	margin-bottom: 35px;
+}
+
+.row_messagerie .form-group input {
+	margin-top: 5px;
+}
+
+/*--------------------------------------*/
+
+.bloc_amis{
+	margin-top: 95px;
+	border: 1px solid black;
+	height:600px;
+}

@@ -1,2 +1,2 @@
-# le dossier cache est ignoré.
-/app/cache/
+/app/cache/*
+/app/logs/*
