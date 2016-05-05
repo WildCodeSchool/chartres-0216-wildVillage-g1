@@ -26,7 +26,7 @@ class Message
      *
      * @ORM\OneToOne(targetEntity="UserBundle\Entity\Utilisateur", cascade={"persist"})
      */
-    private $expéditeur;
+    private $expediteur;
 
     /**
      * @var string
@@ -74,9 +74,9 @@ class Message
      *
      * @return Message
      */
-    public function setExpéditeur($expéditeur)
+    public function setExpéditeur($expediteur)
     {
-        $this->expéditeur = $expéditeur;
+        $this->expediteur = $expediteur;
 
         return $this;
     }
@@ -86,9 +86,9 @@ class Message
      *
      * @return string
      */
-    public function getExpéditeur()
+    public function getExpediteur()
     {
-        return $this->expéditeur;
+        return $this->expediteur;
     }
 
     /**
