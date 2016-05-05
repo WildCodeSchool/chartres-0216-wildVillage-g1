@@ -13,8 +13,36 @@ body {
 .section{
 	border: 1px solid black;
 	margin-top: 15px;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
 }
 
+.bg-social {
+	background: url(../img/social3.jpeg);
+	background-position: center;
+	background-size: cover;
+}
+
+.register {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.log {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 20px 0;
+}
+
+form > input {
+	margin-bottom: 20px;
+}
+
+.submit-user {
+	margin-left: 105px;
+}
 /*--------------------------------------*/
 
 .enregistrement_formulaire{
