@@ -1,0 +1,93 @@
+<?php
+
+namespace UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Utilisateur
+ *
+ * @ORM\Table(name="utilisateur")
+ * @ORM\Entity(repositoryClass="UserBundle\Repository\UtilisateurRepository")
+ */
+class Utilisateur
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+                                                                                                                                                                
+    /**
+     * @var int
+     *
+     * @ORM\OneToOne(targetEntity="UserBundle\Entity\User", cascade={"persist"})
+     */     
+    private $idFosUser;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Nom", type="string", length=25, nullable=true)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=25, nullable=true)
+     */
+    private $prenom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Date_de_naissance", type="string",length=255 , nullable=true)
+     */
+    private $dateDeNaissance;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Twitter", type="string", length=255, nullable=true)
+     */
+    private $twitter;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Linkedin", type="string", length=255, nullable=true)
+     */
+    private $linkedin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Doyoubuzz", type="string", length=255, nullable=true)
+     */
+    private $doyoubuzz;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Github", type="string", length=255, nullable=true)
+     */
+    private $github;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Biographie", type="text", nullable=true)
+     */
+    private $biographie;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="Visible", type="boolean")
+     */
+    private $visible;
+}

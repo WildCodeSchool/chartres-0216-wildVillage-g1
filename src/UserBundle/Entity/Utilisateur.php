@@ -20,12 +20,12 @@ class Utilisateur
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
+                                                                                                                                                                
     /**
      * @var int
      *
      * @ORM\OneToOne(targetEntity="UserBundle\Entity\User", cascade={"persist"})
-     */
+     */     
     private $idFosUser;
 
     /**
@@ -38,14 +38,14 @@ class Utilisateur
     /**
      * @var string
      *
-     * @ORM\Column(name="Prénom", type="string", length=25, nullable=true)
+     * @ORM\Column(name="Prenom", type="string", length=25, nullable=true)
      */
-    private $prénom;
+    private $prenom;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="Date_de_naissance", type="date", nullable=true)
+     * @ORM\Column(name="Date_de_naissance", type="string",length=255 , nullable=true)
      */
     private $dateDeNaissance;
 
@@ -87,43 +87,18 @@ class Utilisateur
     /**
      * @var bool
      *
-     * @ORM\Column(name="Visible", type="boolean")
+     * @ORM\Column(name="Visible", type="boolean", nullable=true)   
      */
     private $visible;
-
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set idFosUser
-     *
-     * @param integer $idFosUser
-     *
-     * @return Utilisateur
-     */
-    public function setIdFosUser($idFosUser)
-    {
-        $this->idFosUser = $idFosUser;
-
-        return $this;
-    }
-
-    /**
-     * Get idFosUser
-     *
-     * @return int
-     */
-    public function getIdFosUser()
-    {
-        return $this->idFosUser;
     }
 
     /**
@@ -151,33 +126,33 @@ class Utilisateur
     }
 
     /**
-     * Set prénom
+     * Set prenom
      *
-     * @param string $prénom
+     * @param string $prenom
      *
      * @return Utilisateur
      */
-    public function setPrénom($prénom)
+    public function setPrenom($prenom)
     {
-        $this->prénom = $prénom;
+        $this->prenom = $prenom;
 
         return $this;
     }
 
     /**
-     * Get prénom
+     * Get prenom
      *
      * @return string
      */
-    public function getPrénom()
+    public function getPrenom()
     {
-        return $this->prénom;
+        return $this->prenom;
     }
 
     /**
      * Set dateDeNaissance
      *
-     * @param \DateTime $dateDeNaissance
+     * @param string $dateDeNaissance
      *
      * @return Utilisateur
      */
@@ -191,7 +166,7 @@ class Utilisateur
     /**
      * Get dateDeNaissance
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDateDeNaissance()
     {
@@ -335,11 +310,34 @@ class Utilisateur
     /**
      * Get visible
      *
-     * @return bool
+     * @return boolean
      */
     public function getVisible()
     {
         return $this->visible;
     }
-}
 
+    /**
+     * Set idFosUser
+     *
+     * @param \UserBundle\Entity\User $idFosUser
+     *
+     * @return Utilisateur
+     */
+    public function setIdFosUser(\UserBundle\Entity\User $idFosUser = null)
+    {
+        $this->idFosUser = $idFosUser;
+
+        return $this;
+    }
+
+    /**
+     * Get idFosUser
+     *
+     * @return \UserBundle\Entity\User
+     */
+    public function getIdFosUser()
+    {
+        return $this->idFosUser;
+    }
+}

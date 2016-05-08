@@ -68,6 +68,41 @@ class RegistrationController extends Controller
 
             $dispatcher->dispatch(FOSUserEvents::REGISTRATION_COMPLETED, new FilterUserResponseEvent($user, $request, $response));
 
+
+            // Username --> FOS
+            // mots de passe -->FOS
+            // mots de vasse validation -->FOS
+            // email --> FOS
+
+            // Recuperation des donné du formulaire
+            $nom                = $request->request->get('nom');
+            $prenom             = $request->request->get('prenom');
+            $dateDeNaissance    = $request->request->get('naissance');
+            $twitter            = $request->request->get('twitter');
+            $linkedin           = $request->request->get('linkedin');
+            $doyoubuzz          = $request->request->get('doyoubuzz');
+            $github             = $request->request->get('github');
+            $biographie         = $request->request->get('biographie');
+
+            // recuperation de l entity manager de Doctrine
+            $em = $this->getDoctrine()->getManager();
+
+            // enregistrement des donné dans une nouvelle entity.
+            $utilisateur = new Utilisateur();
+            $utilisateur->setIdFosUser($user)
+                        ->setNom($nom)
+                        ->setPrenom($prenom)
+                        ->setDateDeNaissance($dateDeNaissance)
+                        ->setTwitter($twitter)
+                        ->setLinkedin($linkedin)
+                        ->setDoyoubuzz($doyoubuzz)
+                        ->setGithub($github)
+                        ->setBiographie($biographie)
+            ;
+
+            $em->persist($utilisateur);
+            $em->flush();
+
             return $response;
         }
 
