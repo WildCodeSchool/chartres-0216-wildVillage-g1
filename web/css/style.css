@@ -37,6 +37,7 @@ body {
 
 form > input {
 	margin-bottom: 20px;
+	color: black;
 }
 
 .submit-user {
