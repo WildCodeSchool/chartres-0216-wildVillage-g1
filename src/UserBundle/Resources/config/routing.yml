@@ -1,5 +1,5 @@
 user_login:
-    path:    /user/login
+    path:    /
     defaults: { _controller: UserBundle:Login:login }
 
 user_register:

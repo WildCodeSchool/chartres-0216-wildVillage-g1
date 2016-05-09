@@ -46,6 +46,10 @@ form > input {
 #titre-connect {
 	margin-left: 60px;
 }
+
+.form-flex {
+	display: inline;
+}
 /*--------------------------------------*/
 
 .enregistrement_formulaire{
@@ -77,4 +81,8 @@ form > input {
 	margin-top: 95px;
 	border: 1px solid black;
 	height:600px;
+}
+
+.register-div {
+	margin-top: 100px;
 }
