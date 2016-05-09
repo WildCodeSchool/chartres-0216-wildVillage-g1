@@ -1,36 +1,44 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" aria-expanded="true">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-            <a class="navbar-brand" href="{{ path('actu_homepage') }}">
-            <img alt="logo_wild_code_school" src="{{ asset('img/logowcs.png') }}" class="logo">
-      </a>
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %} 
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" aria-expanded="true">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{ path('actu_homepage') }}">
+          <img alt="logo_wild_code_school" src="{{ asset('img/logowcs.png') }}" class="logo">
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="{{ path('user_home') }}">Mon espace</a>
+          </li>
+          <li>
+            <a href="{{ path('messagerie_homepage') }}">Messagerie (3)</a>
+          </li>
+          <li>
+            <a href="{{ path('user_parameters') }}">Mes paramètres</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="navbar-text">
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                Bienvenue {{ app.user.username }}
+            {% endif %}
+          </li>
+          <li>
+            <a id="logout" href="{{ path('fos_user_security_logout') }}">Se déconnecter</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li>
-          <a href="{{ path('user_home') }}">Mon espace</a>
-        </li>
-        <li>
-          <a href="{{ path('messagerie_homepage') }}">Messagerie (3)</a>
-        </li>
-        <li>
-          <a href="{{ path('user_parameters') }}">Mes paramètres</a>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="navbar-text">
-          {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-              Bienvenue {{ app.user.username }}
-          {% endif %}
-        </li>
-        <li><a id="logout" href="{{ path('fos_user_security_logout') }}">Se déconnecter</li></a>
-      </ul>
-    </div>
-  </div>
-</nav>
+  </nav>
+{% else %}
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <p class="navbar-text welcome">Bienvenue au Wild Village</p>
+  </nav>
+{% endif %}

@@ -70,11 +70,15 @@
 
 			</div>
 
+
 			<div class="bloc_amis col-md-offset-1 col-md-2">
 				{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                       Bienvenue {{ prenom }}
                       {% endif %}
 			</div>
+
+		{% block sidebar %}{% include ('sidebar/sidebar.html.twig') %}{% endblock %}
+
 
 		</div>
 

@@ -3,8 +3,14 @@
 .navbar-brand{
 	padding:10px;
 }
+
 .navbar-right #logout{
 	color:red;
+}
+
+.welcome{
+	padding-left : 20px;
+	font-size: 20px;
 }
 
 /*--------------------------------------*/
