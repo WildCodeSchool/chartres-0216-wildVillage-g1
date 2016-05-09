@@ -19,20 +19,20 @@
                      				 {% endif %}</li>
 									<li>Nom, prénom : {{ datauser.nom }} {{ datauser.prenom }}  </li>
 									<li>E-mail : {{ repo.email }} </li>
-									<li>Adresse : {{ datauser.biographie }} </li>
+
 								</ul>
 							</div>
 							<div class="profil2 col-lg-offset-1 col-lg-5">
 			 					<ul>
-			 						<li>Compte github : xxxx</li>
-									<li>Compte twitter : xxxxx</li>
-									<li>Compte doyoubuzz : xxxxx</li>
-									<li>Compte linkedin : xxxxx</li>
+			 						<li>Compte github : {{ datauser.github }} </li>
+									<li>Compte twitter : {{ datauser.twitter }}</li>
+									<li>Compte doyoubuzz : {{ datauser.doyoubuzz }}</li>
+									<li>Compte linkedin : {{ datauser.linkedin }}</li>
 								</ul>
 							</div>
 						</div>
 						<div class="row bio">
-							<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte.</p>
+							<p class="text-center">{{ datauser.biographie }}</p>
 						</div>
 	        </div>
 
@@ -73,7 +73,7 @@
 			</div>
 
 			<div class="bloc_amis col-md-offset-1 col-md-2">
-				
+
 			</div>
 
 		</div>
