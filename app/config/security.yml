@@ -19,10 +19,10 @@ security:
                 csrf_token_generator: security.csrf.token_manager
                 login_path:     user_login
                 check_path:     user_check
-                default_target_path:    user_home
-                 
-                
-               
+                default_target_path:    user_show
+
+
+
             logout:       true
             anonymous:    true
 

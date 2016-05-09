@@ -3,3 +3,4 @@
 /app/config/parameters.yml
 src/UserBundle/Resources/views/Login/login.html.twig
 app/config/parameters.yml
+app/config/parameters.yml
