@@ -1,6 +1,10 @@
 user_login:
-    path:    /
-    defaults: { _controller: UserBundle:Login:login }
+    path:    /user/login
+    defaults: { _controller: UserBundle:Security:login }
+
+user_check:
+    path:    /user/check
+    defaults: { _controller: UserBundle:Security:check }
 
 user_register:
     path:    /user/register

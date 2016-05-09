@@ -39,7 +39,15 @@ form > input {
 	margin-bottom: 20px;
 	color: black;
 }
-
+.login-formulaire {
+	color: black;
+}
+label {
+	color: white;
+}
+.btn-inscription {
+	margin-left: -120px;
+}
 .submit-user {
 	margin-left: 85px;
 }
