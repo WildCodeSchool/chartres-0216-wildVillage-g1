@@ -41,13 +41,13 @@
             <p>Nombre d'articles écrits : 12</p>
             <p>Nombre de commentaires écrits : 17</p>
 	        </div>
-
+	        	<form action="{{path ("user_home")}}" method="post">
 				  <fieldset class="form-group col-lg-12 col-md-12">
 				    <label for="exampleTextarea">Nouveau post :</label>
-				    <textarea class="form-control" id="new_post" rows="3"></textarea>
-				    <input type="submit" value="Postez">
+				    <textarea class="form-control" id="new_post" rows="3" name="billet"></textarea>
+				    <input type="submit" value="{{'Postez'|trans}}">
 				  </fieldset>
-
+				</form>
 	        <div class="section col-lg-12 col-md-12">
             <h2>Article 1, Auteur : Michel, Date 03/05/2016</h2>
             <p>Dans le sujet proposé « réseaux sociaux et thérapie », j’interroge l’impact d’une « identité sociale » potentiellement accessible via internet, par les thérapeutes sur leurs clients et inversement.<br>
