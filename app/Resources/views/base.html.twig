@@ -39,7 +39,9 @@
                 </li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                <p class="navbar-text">Bienvenue Michel</p>
+                <p class="navbar-text">{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                      Bienvenue {{ app.user.username }}
+                      {% endif %}</p>
                 <p><a href="{{ path('fos_user_security_logout') }}">Se déconnecter</a></p>
               </ul>
             </div>
