@@ -98,6 +98,7 @@ class RegistrationController extends Controller
                         ->setDoyoubuzz($doyoubuzz)
                         ->setGithub($github)
                         ->setBiographie($biographie)
+                        ->setVisible(1)
             ;
 
             $em->persist($utilisateur);
