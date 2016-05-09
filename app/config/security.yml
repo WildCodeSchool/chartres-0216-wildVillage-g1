@@ -17,8 +17,9 @@ security:
             form_login:
                 provider: fos_userbundle
                 csrf_token_generator: security.csrf.token_manager
-                login_path:    user_login 
-                check_path:    fos_user_security_check
+                login_path:     user_login
+                check_path:     user_check
+                default_target_path:    user_home
                  
                 
                
