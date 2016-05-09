@@ -14,8 +14,10 @@
 	        	<div class="row">
 	        		<div class="profil1 col-lg-5">
 			 					<ul>
-			 						<li>Nom d'utilisateur : cerf01</li>
-									<li>Nom, prénom : Javanaud Thomas</li>
+			 						<li>Nom d'utilisateur : {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                      				{{ app.user.username }}
+                     				 {% endif %}</li>
+									<li>Nom, prénom :  Thomas</li>
 									<li style="color:grey">E-mail : thomas@javanaud.com</li>
 									<li style="color:grey">Adresse : 1, rue de la paix 75000 PARIS</li>
 								</ul>
@@ -71,7 +73,7 @@
 			</div>
 
 			<div class="bloc_amis col-md-offset-1 col-md-2">
-				<p>Ici vous verrez tous vos amis !!</p>
+				
 			</div>
 
 		</div>
