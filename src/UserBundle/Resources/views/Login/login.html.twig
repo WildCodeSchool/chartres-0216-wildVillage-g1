@@ -1,5 +1,7 @@
 {% extends 'base_accueil.html.twig' %}
 
+{% trans_default_domain 'FOSUserBundle' %}
+
 {% block body %}
 
 <div class="container-fluid bg-social">
@@ -7,33 +9,34 @@
 	<div class="row">
 
 		<div class="bloc_principal col-md-offset-1 col-md-7">
-
+		{% if error %}
+			<div class="row">
+    			<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    		</div>
+		{% endif %}
 			<div class="content">
 
-        <div class="section col-lg-12 col-md-12 register">
-          <h2>Nouveau ?</h2>
-          <a href="{{ path('user_register') }}">
-		  	<button type="button" name="button" class="btn">Inscription</button>
-		  </a>
-        </div>
+       			<div class="section col-lg-12 col-md-12 register">
+          			<h2>Nouveau ?</h2>
+          				<a href="{{ path('user_register') }}">
+		  					<button type="button" name="button" class="btn">Inscription</button>
+		  				</a>
+        		</div>
 
-        <div class="section col-lg-12 col-md-12 log">
-			<div class="row">
-				<div class="col-md-4">
-			  		<h2 id="titre-connect">Se connecter</h2>
-			    </div>
-			  	<div class="col-md-8">
-				  <form class="form-flex">
-						<label> Username: </label><input type="text" name="username">
-						<label> Password: </label><input type="text" name="password">
+       			<div class="section col-lg-12 col-md-12 log">
+          			<h2 id="titre-connect">Se connecter</h2>
 
-					  <input type="submit" value="Se connecter" class="submit-user btn">
-				  </form>
-		  		</div>
-	  		</div>
-        </div>
+					<form action="{{ path("fos_user_security_check") }}" method="post">
+						<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+			 			Username: <input type="text" id="username" name="username" value="{{ last_username }}" required="required" placeholder="{{ 'security.login.username'|trans }}" /><br>
+			  			Password: <input type="password" id="password" name="password" required="required" placeholder="{{ 'security.login.password'|trans }}"  /><br>
+			  			<input type="submit" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+					</form>
 
-      </div>
+
+        		</div>
+
+      		</div>
 
 		</div>
 
@@ -44,4 +47,5 @@
 	</div>
 
 </div>
+
 {% endblock %}
