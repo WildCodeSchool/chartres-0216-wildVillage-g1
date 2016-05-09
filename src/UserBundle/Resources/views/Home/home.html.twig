@@ -13,27 +13,27 @@
 	        <div class="section col-lg-12 col-md-12">
 	        	<div class="row">
 	        		<div class="profil1 col-lg-5">
-			 					<ul>
-			 						<li>Nom d'utilisateur : {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                      				{{ app.user.username }}
-                     				 {% endif %}</li>
-									<li>Nom, prénom : {{ datauser.nom }} {{ datauser.prenom }}  </li>
-									<li>E-mail : {{ repo.email }} </li>
+	 					<ul>
+	 						<li>Nom d'utilisateur : {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+              				{{ app.user.username }}
+             				 {% endif %}</li>
+							<li>Nom, prénom : {{ datauser.nom }} {{ datauser.prenom }}  </li>
+							<li>E-mail : {{ repo.email }} </li>
 
-								</ul>
-							</div>
-							<div class="profil2 col-lg-offset-1 col-lg-5">
-			 					<ul>
-			 						<li>Compte github : {{ datauser.github }} </li>
-									<li>Compte twitter : {{ datauser.twitter }}</li>
-									<li>Compte doyoubuzz : {{ datauser.doyoubuzz }}</li>
-									<li>Compte linkedin : {{ datauser.linkedin }}</li>
-								</ul>
-							</div>
-						</div>
-						<div class="row bio">
-							<p class="text-center">{{ datauser.biographie }}</p>
-						</div>
+						</ul>
+					</div>
+					<div class="profil2 col-lg-offset-1 col-lg-5">
+	 					<ul>
+	 						<li>Compte github : {{ datauser.github }} </li>
+							<li>Compte twitter : {{ datauser.twitter }}</li>
+							<li>Compte doyoubuzz : {{ datauser.doyoubuzz }}</li>
+							<li>Compte linkedin : {{ datauser.linkedin }}</li>
+						</ul>
+					</div>
+					</div>
+					<div class="row bio">
+						<p class="text-center">{{ datauser.biographie }}</p>
+					</div>
 	        </div>
 
 	        <div class="section col-lg-12 col-md-12">
