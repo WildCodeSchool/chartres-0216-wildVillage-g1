@@ -31,11 +31,12 @@ class FriendController extends Controller
         //appel des tables*/
         $user = $this ->getUser();
         $repository = $em->getRepository('UserBundle:Utilisateur')->findOneByIdFosUser($user->getId());
-
+        $repo = $em->getRepository('UserBundle:User')->findOneById($user->getId());
+        
         return $this->render('UserBundle:Home:home.html.twig', array(
             'user'=>$user,
             'datauser'=>$repository,
-        
+        	'repo'=>$repo,
         
         ));
     }
