@@ -71,7 +71,9 @@
 			</div>
 
 			<div class="bloc_amis col-md-offset-1 col-md-2">
-				<p>Ici vous verrez tous vos amis !!</p>
+				{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                      Bienvenue {{ prenom }}
+                      {% endif %}
 			</div>
 
 		</div>

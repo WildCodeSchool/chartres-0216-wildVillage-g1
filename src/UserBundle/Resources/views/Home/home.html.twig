@@ -17,7 +17,7 @@
 			 						<li>Nom d'utilisateur : {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                       				{{ app.user.username }}
                      				 {% endif %}</li>
-									<li>Nom, prénom :  Thomas</li>
+									<li>Nom, prénom : {{ datauser.prenom }}  </li>
 									<li style="color:grey">E-mail : thomas@javanaud.com</li>
 									<li style="color:grey">Adresse : 1, rue de la paix 75000 PARIS</li>
 								</ul>

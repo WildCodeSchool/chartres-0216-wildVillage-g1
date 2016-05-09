@@ -21,3 +21,9 @@ user_friend:
 user_parameters:
     path:    /user/parameters
     defaults: { _controller: UserBundle:Parameters:parameters }
+
+
+user_show:
+    path:    /user/show
+    defaults: { _controller: UserBundle:Friend:showProfil }
+
