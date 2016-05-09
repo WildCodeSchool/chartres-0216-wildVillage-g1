@@ -59,6 +59,10 @@ label {
 .form-flex {
 	display: inline;
 }
+
+.form-messagerie label {
+	color: black;
+}
 /*--------------------------------------*/
 
 .enregistrement_formulaire{
