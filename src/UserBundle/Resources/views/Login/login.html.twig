@@ -28,8 +28,8 @@
 
 					<form action="{{ path("fos_user_security_check") }}" method="post">
 						<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-			 			Username: <input type="text" id="username" name="username" value="{{ last_username }}" required="required" placeholder="{{ 'security.login.username'|trans }}" /><br>
-			  			Password: <input type="password" id="password" name="password" required="required" placeholder="{{ 'security.login.password'|trans }}"  /><br>
+			 			<label> Username </label> <input type="text" id="username" name="username" value="{{ last_username }}" required="required" placeholder="{{ 'security.login.username'|trans }}" /><br>
+			  			<label> Password </label> <input type="password" id="password" name="password" required="required" placeholder="{{ 'security.login.password'|trans }}"  /><br>
 			  			<input type="submit" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
 					</form>
 
