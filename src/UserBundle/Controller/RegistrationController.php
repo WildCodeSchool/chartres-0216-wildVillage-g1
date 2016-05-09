@@ -22,6 +22,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use FOS\UserBundle\Model\UserInterface;
 use UserBundle\Entity\Utilisateur;
+use \DateTime;
 
 /**
  * Controller managing the registration
@@ -84,6 +85,8 @@ class RegistrationController extends Controller
             $github             = $request->request->get('github');
             $biographie         = $request->request->get('biographie');
 
+            $convertDate = new DateTime(date("Y-m-d", strtotime($dateDeNaissance)));
+
             // recuperation de l entity manager de Doctrine
             $em = $this->getDoctrine()->getManager();
 
@@ -92,7 +95,7 @@ class RegistrationController extends Controller
             $utilisateur->setIdFosUser($user)
                         ->setNom($nom)
                         ->setPrenom($prenom)
-                        ->setDateDeNaissance($dateDeNaissance)
+                        ->setDateDeNaissance($convertDate)
                         ->setTwitter($twitter)
                         ->setLinkedin($linkedin)
                         ->setDoyoubuzz($doyoubuzz)

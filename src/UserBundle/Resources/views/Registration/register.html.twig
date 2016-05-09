@@ -37,7 +37,7 @@
           {{ form_errors(form.email) }}
         </div>
         <div class="form-group">
-          <input type="date" class="form-control obligatoire" id="Input_dateDeNaissance" placeholder="Date de naissance" name="Date_de_naissance">
+          <input type="date" class="form-control obligatoire" id="Input_dateDeNaissance" placeholder="Date de naissance" name="naissance">
         </div>
         <fieldset class="form-group">
           <input type="text" class="form-control" id="Input_github" placeholder="Lien github" name="github">
@@ -56,6 +56,7 @@
         </fieldset>
         <input type="submit" class="btn btn-primary pull-right" value="{{ 'registration.submit'|trans }}"></input>
 {{ form_end(form) }}
+
     </div>
 
   </div>

@@ -43,9 +43,9 @@ class Utilisateur
     private $prenom;
 
     /**
-     * @var string
+     * @var DateTime
      *
-     * @ORM\Column(name="Date_de_naissance", type="string",length=255 , nullable=true)
+     * @ORM\Column(name="Date_de_naissance", type="date",length=255 , nullable=false)
      */
     private $dateDeNaissance;
 
