@@ -1,5 +1,10 @@
-body {
+/*MENU navbar*/
 
+.navbar-brand{
+	padding:10px;
+}
+.navbar-right #logout{
+	color:red;
 }
 
 /*--------------------------------------*/
