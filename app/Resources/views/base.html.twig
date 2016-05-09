@@ -13,44 +13,8 @@
 
     <body>
 
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" aria-expanded="true">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-                    <a class="navbar-brand" href="./home.html">
-                    <img alt="logo_wild_code_school" src="{{ asset('img/logowcs.png') }}" class="logo">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-              <ul class="nav navbar-nav">
-                <li>
-                  <a href="{{ path('user_home') }}">Mon espace</a>
-                </li>
-                <li>
-                  <a href="{{ path('messagerie_homepage') }}">Messagerie (3)</a>
-                </li>
-                <li>
-                  <a href="{{ path('user_parameters') }}">Mes paramètres</a>
-                </li>
-              </ul>
-              <ul class="nav navbar-nav navbar-right">
-                <p class="navbar-text">{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                      Bienvenue {{ app.user.username }}
-                      {% endif %}</p>
-                <p><a href="{{ path('fos_user_security_logout') }}">Se déconnecter</a></p>
-              </ul>
-            </div>
-          </div>
-        </nav>
-
-        {% block body %}{% endblock %}
-
-        {% block javascripts %}{% endblock %}
+      {% block menu %}{% include ('menu/menu.html.twig') %}{% endblock %}
+      {% block body %}{% endblock %}
 
     </body>
 </html>
