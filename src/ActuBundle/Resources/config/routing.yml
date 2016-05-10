@@ -2,7 +2,6 @@ actu_homepage:
     path:     /actu
     defaults: { _controller: ActuBundle:Actu:actu }
 
-
 sidebar:
     path:     /sidebar
     defaults: { _controller: ActuBundle:Actu:sidebar }

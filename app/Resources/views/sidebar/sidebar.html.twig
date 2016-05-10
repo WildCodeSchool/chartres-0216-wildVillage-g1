@@ -2,7 +2,7 @@
   
 	<ul>        
     {% for x in sidebar_user %}
-      <li>{{ x.username }}</li>
+      <li><a href="{{ path('friend', {'friend': x.id}) }}">{{ x.username }}</a></li>
     {% endfor %}
 	</ul>
 
