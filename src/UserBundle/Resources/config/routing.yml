@@ -22,9 +22,7 @@ user_show:
     path:    /user/home
     defaults: { _controller: UserBundle:Friend:showProfil }
 
-user_profil:
-    path:    /user/parameters
-    defaults: { _controller: UserBundle:Parameters:parameters }
+
 
 friend:
     path:    /show/{friend}
