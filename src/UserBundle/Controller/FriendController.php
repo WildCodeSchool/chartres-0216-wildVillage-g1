@@ -1,20 +1,18 @@
 <?php
-
 namespace UserBundle\Controller;
-
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
-use ActuBundle\Entity\Post;
 use UserBundle\Entity\Utilisateur;
 use UserBundle\Entity\User;
-use \DateTime;
-
-class HomeController extends Controller
+use Symfony\Component\HttpFoundation\Request;
+class FriendController extends Controller
 {
-    public function homeAction(Request $request)
+    public function friendAction()
+    {
+        return $this->render('UserBundle:Friend:friend.html.twig');
+    }
+    public function showProfilAction (Request $request)
     {
     	$em = $this->getDoctrine()->getManager();
-
     	/*$prenom = $request->request->get('prenom');
         $surname = $request->request->get('surname');
         $age = $request->request->get('age');
@@ -25,41 +23,17 @@ class HomeController extends Controller
         $firstnameispublic = $request->request->get('firstnameispublic');
         $username = $request->request->get('username');
         $bio = $request->request->get('bio');
-        
+
         //appel des tables*/
         $user = $this ->getUser();
         $repository = $em->getRepository('UserBundle:Utilisateur')->findOneByIdFosUser($user->getId());
         $repo = $em->getRepository('UserBundle:User')->findOneById($user->getId());
 
-
-    		// recuperation de l entity manager de Doctrine
-            $em = $this->getDoctrine()->getManager();
-
-	    		$billet	= $request->request->get('billet');
-	    		$user = $this->container->get('security.context')->getToken()->getUser();
-
-    		if (!empty($billet)){
-
-		    		$datePubli = new DateTime(date("Y-m-d H:i:s"));
-
-		            // enregistrement des donné dans une nouvelle entity.
-
-		            $post = new Post();
-		            $post->setBillet($billet)
-		            	 ->setDatePublication($datePubli)
-		           		 ->setAuteur($user)
-		           	;
-
-		            $em->persist($post);
-		            $em->flush();
-			}
-
-        return $this->render('UserBundle:Home:home.html.twig',array(
+        return $this->render('UserBundle:Home:home.html.twig', array(
             'user'=>$user,
             'datauser'=>$repository,
         	'repo'=>$repo,
-        
+
         ));
     }
-
 }

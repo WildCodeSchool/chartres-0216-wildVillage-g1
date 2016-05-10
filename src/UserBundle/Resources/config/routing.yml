@@ -26,8 +26,11 @@ user_parameters:
 user_show:
     path:    /user/home
     defaults: { _controller: UserBundle:Friend:showProfil }
+<<<<<<< HEAD
 
 user_profil:
     path:    /user/parameters
     defaults: { _controller: UserBundle:Parameters:parameters }
 
+=======
+>>>>>>> f71d6631ceaaffc1a6c127d08f35010e2738c134

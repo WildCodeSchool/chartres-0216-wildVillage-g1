@@ -57,17 +57,7 @@
 	          <span class="input-group-addon">
         			<input type="checkbox" aria-label="...">
       			</span>	          
-	          <input type="text" class="form-control" id="Input_naissance" placeholder="{{ datauser.date_de_naissance }}">
-	          <span class="input-group-btn">
-        			<button class="btn btn-default" type="button">Go!</button>
-      			</span>
-	        </div>
-	        <label for="Input_adresse">Adresse</label>
-	        <div class="input-group">
-	          <span class="input-group-addon">
-        			<input type="checkbox" aria-label="...">
-      			</span>	          
-	          <input type="text" class="form-control" id="Input_adresse" placeholder="35, allée des biches 75000 Paris">
+	          <input type="text" class="form-control" id="Input_naissance" placeholder="{{ datauser.date }}">
 	          <span class="input-group-btn">
         			<button class="btn btn-default" type="button">Go!</button>
       			</span>
@@ -89,7 +79,7 @@
 	          <span class="input-group-addon">
         			<input type="checkbox" aria-label="...">
       			</span>	          
-	          <input type="text" class="form-control" id="Input_github" placeholder="http://github.com/patoulachimich">
+	          <input type="text" class="form-control" id="Input_github" placeholder="{{ datauser.github }}">
 	          <span class="input-group-btn">
         			<button class="btn btn-default" type="button">Go!</button>
       			</span>
@@ -99,7 +89,7 @@
 	          <span class="input-group-addon">
         			<input type="checkbox" aria-label="...">
       			</span>	          
-	          <input type="text" class="form-control" id="Input_linkedin" placeholder="">
+	          <input type="text" class="form-control" id="Input_linkedin" placeholder="{{ datauser.linkedin }}">
 	          <span class="input-group-btn">
         			<button class="btn btn-default" type="button">Go!</button>
       			</span>
@@ -109,7 +99,7 @@
 	          <span class="input-group-addon">
         			<input type="checkbox" aria-label="...">
       			</span>	          
-	          <input type="text" class="form-control" id="Input_twitter" placeholder="Patoulachi">
+	          <input type="text" class="form-control" id="Input_twitter" placeholder="{{ datauser.twitter }}">
 	          <span class="input-group-btn">
         			<button class="btn btn-default" type="button">Go!</button>
       			</span>
@@ -119,7 +109,7 @@
 	          <span class="input-group-addon">
         			<input type="checkbox" aria-label="...">
       			</span>	          
-	          <input type="text" class="form-control" id="Input_doyoubuzz" placeholder="">
+	          <input type="text" class="form-control" id="Input_doyoubuzz" placeholder="{{ datauser.doyoubuzz }}">
 	          <span class="input-group-btn">
         			<button class="btn btn-default" type="button">Go!</button>
       			</span>
@@ -129,7 +119,7 @@
 	          <span class="input-group-addon">
         			<input type="checkbox" aria-label="...">
       			</span>	          
-	          <textarea class="form-control" id="Input_biographie" rows="8" placeholder="..."></textarea>
+	          <textarea class="form-control" id="Input_biographie" rows="8" placeholder="{{ datauser.biographie }}"></textarea>
 	          <span class="input-group-btn">
         			<button class="btn btn-default" type="button">Go!</button>
       			</span>

@@ -1,9 +1,6 @@
 <?php
-
 namespace MessagerieBundle\Controller;
-
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 class MessagerieController extends Controller
 {
     public function messagerieAction()
