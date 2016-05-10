@@ -12,7 +12,7 @@ user_register:
 
 user_home:
     path:    /user/home
-    defaults: { _controller: UserBundle:Friend:showProfil }
+    defaults: { _controller: UserBundle:Home:home }
 
 user_friend:
     path:    /user/friend
@@ -22,6 +22,7 @@ user_parameters:
     path:    /user/parameters
     defaults: { _controller: UserBundle:Parameters:parameters }
 
+
 user_show:
     path:    /user/home
     defaults: { _controller: UserBundle:Friend:showProfil }
@@ -29,3 +30,4 @@ user_show:
 user_profil:
     path:    /user/parameters
     defaults: { _controller: UserBundle:Parameters:parameters }
+
