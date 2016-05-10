@@ -34,6 +34,7 @@ class FriendController extends Controller
         foreach ($userPost as $msg)
         {
             $tabPost[] = array(
+                'date'   => $msg->getdatePublication(),
                 'billet' => $msg->getBillet(),            
             );
         }

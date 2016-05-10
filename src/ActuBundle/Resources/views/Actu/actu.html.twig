@@ -6,7 +6,8 @@
 			<div class="bloc_principal col-md-offset-1 col-md-7">
 
           {% for x in flux %}
-            <div class="section col-lg-12 col-md-12">
+            <div class="flux col-lg-12 col-md-12">
+              <p>{{ x['auteur'] }} le {{ x['date']| date("d/m/Y") }}</p>
               <p>{{ x['billet'] }}</p>
             </div>
           {% endfor %}

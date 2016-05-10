@@ -10,6 +10,8 @@ class ActuController extends Controller
 {
     public function actuAction()
     {
+        $em = $this->getDoctrine()->getManager();
+
         //Affichage du flux des posts
         $repoActu = $this->getDoctrine()->getRepository('ActuBundle:Post');
 
@@ -19,10 +21,15 @@ class ActuController extends Controller
         
         foreach ($fluxPost as $msg)
         {
+            $thisAuteur = $em->getRepository('UserBundle:User')->findOneById($msg->getAuteur());
+            // var_dump($thisAuteur);exit;
             $tabPost[] = array(
+                'auteur' => $thisAuteur->getUsername(),
+                'date'   => $msg->getdatePublication(),
                 'billet' => $msg->getBillet(),            
             );
         }
+
         return $this->render('ActuBundle:Actu:actu.html.twig', array(
             'flux'=>$tabPost,
         ));
