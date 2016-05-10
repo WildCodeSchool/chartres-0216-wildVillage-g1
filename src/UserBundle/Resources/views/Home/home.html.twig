@@ -49,33 +49,23 @@
 				    <input type="submit" value="{{'Postez'|trans}}">
 				  </fieldset>
 				</form>
-	        <div class="section col-lg-12 col-md-12">
-            <h2>Article 1, Auteur : Michel, Date 03/05/2016</h2>
-            <p>Dans le sujet proposé « réseaux sociaux et thérapie », j’interroge l’impact d’une « identité sociale » potentiellement accessible via internet, par les thérapeutes sur leurs clients et inversement.<br>
-            L’AT a-t-elle un champ « sociologie » ?<br>
-            Je poserai d’abord la question : l’AT a-t-elle une branche « sociologie » ? Je connais AT et organisation, AT et éducation, AT et thérapie individuelle et de groupe, mais AT et sociologie ? Je me souviens, lors de ma première année de formation en AT, nous avons fait l’egogramme de « France Inter » et d’« Europe 1 » ; c’est ce regard « sociologique » qui me semble concerné par cette question passionnante des réseaux sociaux.<br>
-            L’impact des réseaux sociaux sur la thérapie : une question d’exhibitionnisme ?</p>
-            <p>Brames (3) : Génial cet article ...</p>
-            <span><a href="#">Supprimez</a></span>
-	        </div>
 
-	        <div class="section col-lg-12 col-md-12">
-            <h2>Article 2, Auteur : Michel, Date 30/04/2016</h2>
-            <p>Dans le sujet proposé « réseaux sociaux et thérapie », j’interroge l’impact d’une « identité sociale » potentiellement accessible via internet, par les thérapeutes sur leurs clients et inversement.<br>
-            L’AT a-t-elle un champ « sociologie » ?<br>
-            Je poserai d’abord la question : l’AT a-t-elle une branche « sociologie » ? Je connais AT et organisation, AT et éducation, AT et thérapie individuelle et de groupe, mais AT et sociologie ? Je me souviens, lors de ma première année de formation en AT, nous avons fait l’egogramme de « France Inter » et d’« Europe 1 » ; c’est ce regard « sociologique » qui me semble concerné par cette question passionnante des réseaux sociaux.<br>
-            L’impact des réseaux sociaux sur la thérapie : une question d’exhibitionnisme ?</p>
-            <p>Brames (12) : Zzzzzzzzzzzzz ...</p>
-            <span><a href="#">Supprimez</a></span>
+	        <div class="sectionhome col-lg-12 col-md-12">
+			{% for x in postuser|reverse %}
+				<div class="post">
+	      			<p>{{ x['date']| date("H:i d/m/Y") }}</p>
+	      			<p>{{ x['message'] }}</p>
+      			</div>
+    			{% endfor %}
 	        </div>
 
 	      </div>
 
 			</div>
 
-			<div class="bloc_amis col-md-offset-1 col-md-2">
-
-			</div>
+      <div id="sidebar">
+            {{ render(controller('ActuBundle:Actu:sidebar')) }}
+      </div>
 
 		</div>
 

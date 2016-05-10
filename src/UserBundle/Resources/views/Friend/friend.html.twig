@@ -8,8 +8,8 @@
 
 			<div class="bloc_principal col-md-offset-1 col-md-7">
 
-	      <div class="section col-lg-12 col-md-12">
-	       	<div class="row profil">
+	      <div class="friend_profil col-lg-12 col-md-12">
+	       	<div class="row">
 
 						<div class="profilcol1 col-lg-5">
 							<ul>
@@ -36,17 +36,19 @@
 
 	      </div>
 
-	      <div class="section col-lg-12 col-md-12">
+	      <div class="friend_stat col-lg-12 col-md-12">
 	       <h2>Statistiques</h2>
 	        <p>Nombre d'articles écrits : 12</p>
 	        <p>Nombre de commentaires écrits : 17</p>
 	      </div>
 
-	      <div class="section col-lg-12 col-md-12">
+
 					{% for x in postUser %}
-      			<p>{{ x['billet'] }}</p>
+						<div class="friend_post col-lg-12 col-md-12">
+							<p>Le {{ x['date']| date("d/m/Y") }}</p>
+      				<p>{{ x['billet'] }}</p>
+      			</div>
     			{% endfor %}
-	      </div>
 
 	    </div>
 

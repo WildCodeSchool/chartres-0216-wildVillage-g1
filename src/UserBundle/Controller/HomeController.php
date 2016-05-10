@@ -15,50 +15,48 @@ class HomeController extends Controller
     {
     	$em = $this->getDoctrine()->getManager();
 
-    	/*$prenom = $request->request->get('prenom');
-        $surname = $request->request->get('surname');
-        $age = $request->request->get('age');
-        $email = $request->request->get('email');
-        $mailispublic= $request->request->get('mailispublic');
-        $ageispublic = $request->request->get('ageispublic');
-        $surnameispublic = $request->request->get('surnameispublic');
-        $firstnameispublic = $request->request->get('firstnameispublic');
-        $username = $request->request->get('username');
-        $bio = $request->request->get('bio');
-        
-        //appel des tables*/
-        $user = $this ->getUser();
+		$user = $this->container->get('security.context')->getToken()->getUser();
         $repository = $em->getRepository('UserBundle:Utilisateur')->findOneByIdFosUser($user->getId());
         $repo = $em->getRepository('UserBundle:User')->findOneById($user->getId());
 
+		$billet	= $request->request->get('billet');
 
-    		// recuperation de l entity manager de Doctrine
-            $em = $this->getDoctrine()->getManager();
+		if (!empty($billet)){
 
-	    		$billet	= $request->request->get('billet');
-	    		$user = $this->container->get('security.context')->getToken()->getUser();
+    		$datePubli = new DateTime(date("Y-m-d H:i:s"));
 
-    		if (!empty($billet)){
+            // enregistrement des donné dans une nouvelle entity.
 
-		    		$datePubli = new DateTime(date("Y-m-d H:i:s"));
+            $post = new Post();
+            $post->setBillet($billet)
+            	 ->setDatePublication($datePubli)
+           		 ->setAuteur($user)
+           	;
 
-		            // enregistrement des donné dans une nouvelle entity.
+            $em->persist($post);
+            $em->flush();
+		}
 
-		            $post = new Post();
-		            $post->setBillet($billet)
-		            	 ->setDatePublication($datePubli)
-		           		 ->setAuteur($user)
-		           	;
+		//Affichage des posts !!!
+		$tab = [];
+		$billet = $em->getRepository('ActuBundle:Post')->findByauteur($user);
+		
 
-		            $em->persist($post);
-		            $em->flush();
-			}
+		foreach ($billet as $printpost) {
+		//$auteur = $em->getRepository('ActuBundle:Post')->findOneById($printpost->getAuteur());
+			$tab[] = array(
+		 		'message'	=> $printpost 	->getBillet(),
+				'date' 		=> $printpost	->getdatePublication(),
+		 	);
+		}
+
+		// var_dump($printpost); exit;
 
         return $this->render('UserBundle:Home:home.html.twig',array(
             'user'=>$user,
             'datauser'=>$repository,
         	'repo'=>$repo,
-        
+        	'postuser'=>$tab,
         ));
     }
 

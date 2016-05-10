@@ -39,10 +39,11 @@ class MessagerieController extends Controller
         $message = $request->request->get('message');
         $destinataire = $request->request->get('destinataire');
 
-        $requestmessage = $em->getRepository('UserBundle:User')->findOneById($destinataire);
-        
+        // $requestdestinataire = $em->getRepository('UserBundle:User')->findOneById($destinataire);
+        // $requestmessage = $em->getRepository('UserBundle:User');
 
-        $idDest = $requestmessage->getId();
+
+        $idDest = $destinataire->getId();
         $object = new Message();
         $object->setMessage($message);
         $object->setAuteur($user->getId());
