@@ -40,6 +40,7 @@ class MessagerieController extends Controller
         $destinataire = $request->request->get('destinataire');
 
         $requestmessage = $em->getRepository('UserBundle:User')->findOneById($destinataire);
+        
 
         $idDest = $requestmessage->getId();
         $object = new Message();
