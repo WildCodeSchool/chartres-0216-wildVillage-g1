@@ -24,7 +24,7 @@ class Message
     /**
      * @var string
      *
-     * @ORM\OneToOne(targetEntity="UserBundle\Entity\Utilisateur", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\Utilisateur", cascade={"persist"})
      */
     private $expediteur;
 
@@ -187,4 +187,3 @@ class Message
         return $this->dateEnvoi;
     }
 }
-
