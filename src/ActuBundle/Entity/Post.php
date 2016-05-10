@@ -24,7 +24,7 @@ class Post
     /**
      * @var string
      *
-     * @ORM\OneToOne(targetEntity="UserBundle\Entity\Utilisateur", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User", cascade={"persist"})
      */
     private $auteur;
 

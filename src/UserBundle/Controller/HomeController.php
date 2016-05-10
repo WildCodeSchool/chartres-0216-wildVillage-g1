@@ -13,8 +13,7 @@ class HomeController extends Controller
 {
     public function homeAction(Request $request)
     {
-
-    		$em = $this->getDoctrine()->getManager();
+    	$em = $this->getDoctrine()->getManager();
 
     	/*$prenom = $request->request->get('prenom');
         $surname = $request->request->get('surname');
@@ -31,17 +30,13 @@ class HomeController extends Controller
         $user = $this ->getUser();
         $repository = $em->getRepository('UserBundle:Utilisateur')->findOneByIdFosUser($user->getId());
         $repo = $em->getRepository('UserBundle:User')->findOneById($user->getId());
-        
 
 
     		// recuperation de l entity manager de Doctrine
             $em = $this->getDoctrine()->getManager();
 
 	    		$billet	= $request->request->get('billet');
-	    		// $user = $this->container->get('security.context')->getToken()->getUser();
-
-	    		// var_dump($user); exit;
-
+	    		$user = $this->container->get('security.context')->getToken()->getUser();
 
     		if (!empty($billet)){
 
@@ -50,9 +45,9 @@ class HomeController extends Controller
 		            // enregistrement des donné dans une nouvelle entity.
 
 		            $post = new Post();
-		            $post->setbillet($billet)
-		            	 ->setdatePublication($datePubli)
-		           //		 ->setauteur($user)
+		            $post->setBillet($billet)
+		            	 ->setDatePublication($datePubli)
+		           		 ->setAuteur($user)
 		           	;
 
 		            $em->persist($post);
@@ -62,6 +57,9 @@ class HomeController extends Controller
         return $this->render('UserBundle:Home:home.html.twig',array(
             'user'=>$user,
             'datauser'=>$repository,
-        	'repo'=>$repo,));
+        	'repo'=>$repo,
+        
+        ));
     }
+
 }
