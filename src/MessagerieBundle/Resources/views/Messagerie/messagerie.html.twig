@@ -6,30 +6,30 @@
 
     <div class="bloc_principal col-md-offset-1 col-md-7">
 
-      <fieldset class="form-group form-messagerie">
+      <form  method="post" action="{{ path ('messagerie_new') }}" class="form-group form-messagerie">
           <div class="row">
               <div class="champ-destinataire col-md-6">
                   <label> Destinataire </label>
                   <br />
-                  <input></input>
+                  <input type="text" name="destinataire"></input>
               </div>
               <div class="sujet col-md-6">
                   <label> Sujet </label>
                   <br />
-                  <input></input>
+                  <input type="text" name="Sujet"></input>
                   <br />
               </div>
           </div>
-          <label for="exampleTextarea">Nouveau message </label>
-          <textarea class="form-control" id="new_post" rows="3"></textarea>
-          <input type="submit" value="Postez">
-      </fieldset>
+          <label> Nouveau message </label>
+          <textarea class="form-control" id="new_post" name="message" rows="3"></textarea>
+          <input type="submit" value="Envoyer">
+      </form>
 
       <div class="section col-lg-12 col-md-12">
-        <h2>Message reçu le 03/05/2016 de Sylvian</h2>
-        <p>Dans le sujet proposé « réseaux sociaux et thérapie », j’interroge l’impact d’une « identité sociale » potentiellement accessible via internet, par les thérapeutes sur leurs clients et inversement.<br>
-        L’AT a-t-elle un champ « sociologie » ?<br>
-        L’impact des réseaux sociaux sur la thérapie : une question d’exhibitionnisme ?</p>
+          {% for msg in tab %}
+            <p>{{ msg['expediteur']}}</p>
+            <p>{{ msg['message']}}</p>
+          {% endfor %}
 
       </div>
 
