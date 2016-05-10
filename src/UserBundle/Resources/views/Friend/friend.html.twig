@@ -33,7 +33,7 @@
 					<div class="row bio">
 						<p class="text-center">{{ dataUtilisateur.biographie }}</p>
 					</div>
-					
+
 	      </div>
 
 	      <div class="section col-lg-12 col-md-12">
@@ -42,9 +42,11 @@
 	        <p>Nombre de commentaires écrits : 17</p>
 	      </div>
 
-{# 	      <div class="section col-lg-12 col-md-12">
-					{{ render(controller('UserBundle:Friend:friend_post')) }}
-	      </div> #}
+	      <div class="section col-lg-12 col-md-12">
+					{% for x in postUser %}
+      			<p>{{ x['billet'] }}</p>
+    			{% endfor %}
+	      </div>
 
 	    </div>
 
