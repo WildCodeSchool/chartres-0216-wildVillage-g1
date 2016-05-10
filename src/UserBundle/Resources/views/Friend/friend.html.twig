@@ -8,79 +8,54 @@
 
 			<div class="bloc_principal col-md-offset-1 col-md-7">
 
-				<div class="content">
+	      <div class="section col-lg-12 col-md-12">
+	       	<div class="row profil">
 
-	        <div class="section col-lg-12 col-md-12">
-	        	<div class="row">
-	        		<div class="profil1 col-lg-5">
-			 					<ul>
-			 						<li>Nom d'utilisateur : cerf01</li>
-									<li>Nom, prénom : Javanaud Thomas</li>
-									<li style="color:grey">E-mail : thomas@javanaud.com</li>
-									<li style="color:grey">Adresse : 1, rue de la paix 75000 PARIS</li>
-								</ul>
-							</div>
-							<div class="profil2 col-lg-offset-1 col-lg-5">
-			 					<ul>
-			 						<li>Compte github : xxxx</li>
-									<li>Compte twitter : xxxxx</li>
-									<li>Compte doyoubuzz : xxxxx</li>
-									<li>Compte linkedin : xxxxx</li>
-								</ul>
-							</div>
+						<div class="profilcol1 col-lg-5">
+							<ul>
+								<li>Nom d'utilisateur :	{{ dataUser.username }}</li>
+								<li>Nom, prénom : {{ dataUtilisateur.nom }}, {{ dataUtilisateur.prenom }}</li>
+								<li>E-mail : {{ dataUser.email }}</li>
+							</ul>
 						</div>
-						<div class="row bio">
-							<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte.</p>
+
+						<div class="profilcol2 col-lg-offset-1 col-lg-5">
+							<ul>
+								<li>Compte github : {{ dataUtilisateur.github }} </li>
+								<li>Compte twitter : {{ dataUtilisateur.twitter }}</li>
+								<li>Compte doyoubuzz : {{ dataUtilisateur.doyoubuzz }}</li>
+								<li>Compte linkedin : {{ dataUtilisateur.linkedin }}</li>
+							</ul>
 						</div>
-	        </div>
 
-	        <div class="section col-lg-12 col-md-12">
-           <h2>Statistiques</h2>
-            <p>Nombre d'articles écrits : 12</p>
-            <p>Nombre de commentaires écrits : 17</p>
-	        </div>
+					</div>
 
-				  <fieldset class="form-group">
-				    <label for="exampleTextarea">Nouveau post :</label>
-				    <textarea class="form-control" id="new_post" rows="3"></textarea>
-				    <input type="submit" value="Postez">
-				  </fieldset>
-
-	        <div class="section col-lg-12 col-md-12">
-            <h2>Article 1, Auteur : Michel, Date 03/05/2016</h2>
-            <p>Dans le sujet proposé « réseaux sociaux et thérapie », j’interroge l’impact d’une « identité sociale » potentiellement accessible via internet, par les thérapeutes sur leurs clients et inversement.<br>
-            L’AT a-t-elle un champ « sociologie » ?<br>
-            Je poserai d’abord la question : l’AT a-t-elle une branche « sociologie » ? Je connais AT et organisation, AT et éducation, AT et thérapie individuelle et de groupe, mais AT et sociologie ? Je me souviens, lors de ma première année de formation en AT, nous avons fait l’egogramme de « France Inter » et d’« Europe 1 » ; c’est ce regard « sociologique » qui me semble concerné par cette question passionnante des réseaux sociaux.<br>
-            L’impact des réseaux sociaux sur la thérapie : une question d’exhibitionnisme ?</p>
-            <p>Brames (3) : Génial cet article ...</p>
-            <span><a href="#">Supprimez</a></span>
-	        </div>
-
-	        <div class="section col-lg-12 col-md-12">
-            <h2>Article 2, Auteur : Michel, Date 30/04/2016</h2>
-            <p>Dans le sujet proposé « réseaux sociaux et thérapie », j’interroge l’impact d’une « identité sociale » potentiellement accessible via internet, par les thérapeutes sur leurs clients et inversement.<br>
-            L’AT a-t-elle un champ « sociologie » ?<br>
-            Je poserai d’abord la question : l’AT a-t-elle une branche « sociologie » ? Je connais AT et organisation, AT et éducation, AT et thérapie individuelle et de groupe, mais AT et sociologie ? Je me souviens, lors de ma première année de formation en AT, nous avons fait l’egogramme de « France Inter » et d’« Europe 1 » ; c’est ce regard « sociologique » qui me semble concerné par cette question passionnante des réseaux sociaux.<br>
-            L’impact des réseaux sociaux sur la thérapie : une question d’exhibitionnisme ?</p>
-            <p>Brames (12) : Zzzzzzzzzzzzz ...</p>
-            <span><a href="#">Supprimez</a></span>
-	        </div>
+					<div class="row bio">
+						<p class="text-center">{{ dataUtilisateur.biographie }}</p>
+					</div>
 
 	      </div>
 
-			</div>
+	      <div class="section col-lg-12 col-md-12">
+	       <h2>Statistiques</h2>
+	        <p>Nombre d'articles écrits : 12</p>
+	        <p>Nombre de commentaires écrits : 17</p>
+	      </div>
 
+	      <div class="section col-lg-12 col-md-12">
+					{% for x in postUser %}
+      			<p>{{ x['billet'] }}</p>
+    			{% endfor %}
+	      </div>
 
-			<div class="bloc_amis col-md-offset-1 col-md-2">
-				{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                      Bienvenue {{ prenom }}
-                      {% endif %}
-			</div>
+	    </div>
 
-		{% block sidebar %}{% include ('sidebar/sidebar.html.twig') %}{% endblock %}
-
+      <div id="sidebar">
+            {{ render(controller('ActuBundle:Actu:sidebar')) }}
+      </div>
 
 		</div>
 
 	</div>
+
 {% endblock %}

@@ -14,22 +14,23 @@ user_home:
     path:    /user/home
     defaults: { _controller: UserBundle:Home:home }
 
-user_friend:
-    path:    /user/friend
-    defaults: { _controller: UserBundle:Friend:friend }
-
 user_parameters:
     path:    /user/parameters
     defaults: { _controller: UserBundle:Parameters:parameters }
-
 
 user_show:
     path:    /user/home
     defaults: { _controller: UserBundle:Friend:showProfil }
 
-
 user_profil:
     path:    /user/parameters
     defaults: { _controller: UserBundle:Parameters:parameters }
 
+friend:
+    path:    /show/{friend}
+    defaults: { _controller: UserBundle:Friend:friend }
+
+friend_post:
+    path:    /post/{friend}
+    defaults: { _controller: UserBundle:Friend:showFriendPost }
 

@@ -19,7 +19,7 @@ class ActuController extends Controller
 
         $repository = $this->getDoctrine()->getRepository('UserBundle:User');
  
-        $sidebar_user = $repository->findAll();;
+        $sidebar_user = $repository->findAll();
 
 				return $this->render('sidebar/sidebar.html.twig', array(
 					'sidebar_user' => $sidebar_user,
