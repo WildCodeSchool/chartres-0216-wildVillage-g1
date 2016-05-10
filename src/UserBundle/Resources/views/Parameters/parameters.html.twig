@@ -16,18 +16,18 @@
 	          <span class="input-group-addon">
         			<input type="checkbox" aria-label="...">
       			</span>
-	          <input type="text" class="form-control" id="Input_username" placeholder="Michel">
+	          <input type="text" class="form-control" id="Input_username" placeholder="{{ app.user.username }}">
 	          <span class="input-group-btn">
         			<button class="btn btn-default" type="button">Go!</button>
       			</span>
 	        </div>
 	        <label for="Input_mdp1">Mot de passe</label>
 	        <div class="input-group">
-	          <input type="text" class="form-control" id="Input_mdp1" placeholder="abracadabra">
+	          <input type="text" class="form-control" id="Input_mdp1" placeholder="{{ repo.password }}">
 	        </div>
 	        <div class="input-group">
 	          <label for="Input_mdp1">Confirmation mot de passe</label>         
-	          <input type="text" class="form-control" id="Input_mdp2" placeholder="abracadabra">
+	          <input type="text" class="form-control" id="Input_mdp2" placeholder="{{ repo.password }}">
 	          <span class="input-group-btn">
         			<button class="btn btn-default" type="button">Go!</button>
       			</span>
@@ -37,7 +37,7 @@
 	          <span class="input-group-addon">
         			<input type="checkbox" aria-label="...">
       			</span>	          
-	          <input type="text" class="form-control" id="Input_nom" placeholder="Patoulachi">
+	          <input type="text" class="form-control" id="Input_nom" placeholder="{{ datauser.nom }}">
 	          <span class="input-group-btn">
         			<button class="btn btn-default" type="button">Go!</button>
       			</span>
@@ -47,7 +47,7 @@
 	          <span class="input-group-addon">
         			<input type="checkbox" aria-label="...">
       			</span>	          
-	          <input type="text" class="form-control" id="Input_prenom" placeholder="Michel">
+	          <input type="text" class="form-control" id="Input_prenom" placeholder="{{ datauser.prenom }}">
 	          <span class="input-group-btn">
         			<button class="btn btn-default" type="button">Go!</button>
       			</span>
@@ -57,7 +57,7 @@
 	          <span class="input-group-addon">
         			<input type="checkbox" aria-label="...">
       			</span>	          
-	          <input type="text" class="form-control" id="Input_naissance" placeholder="02/06/1963">
+	          <input type="text" class="form-control" id="Input_naissance" placeholder="{{ datauser.date_de_naissance }}">
 	          <span class="input-group-btn">
         			<button class="btn btn-default" type="button">Go!</button>
       			</span>
@@ -77,7 +77,7 @@
 	          <span class="input-group-addon">
         			<input type="checkbox" aria-label="...">
       			</span>	          
-	          <input type="email" class="form-control" id="Input_email" placeholder="michel.patoulachi@inconnus.fr">
+	          <input type="email" class="form-control" id="Input_email" placeholder="{{ repo.email }}">
 	          <span class="input-group-btn">
         			<button class="btn btn-default" type="button">Go!</button>
       			</span>
