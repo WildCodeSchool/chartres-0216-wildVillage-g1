@@ -19,79 +19,19 @@ use DateTime;
 class ParametersController extends Controller
 {
 
-	public function parametersAction (Request $request)
-	{	
-	    	$em = $this->getDoctrine()->getManager();
+	
+    public function parametersAction(Request $request)
+    {
+    	$em = $this->getDoctrine() ->getManager();
+    	 $user = $this ->getUser();
+        $repository = $em->getRepository('UserBundle:Utilisateur')->findOneByIdFosUser($user->getId());
+        $repo = $em->getRepository('UserBundle:User')->findOneById($user->getId());
 
-	    	/*$prenom = $request->request->get('prenom');
-	        $surname = $request->request->get('surname');
-	        $age = $request->request->get('age');
-	        $email = $request->request->get('email');
-	        $mailispublic= $request->request->get('mailispublic');
-	        $ageispublic = $request->request->get('ageispublic');
-	        $surnameispublic = $request->request->get('surnameispublic');
-	        $firstnameispublic = $request->request->get('firstnameispublic');
-	        $username = $request->request->get('username');
-	        $bio = $request->request->get('bio');
-	        
-	        //appel des tables*/
-	        $user = $this ->getUser();
+    	
+    	$user = $this ->getUser();
 	        $repository = $em->getRepository('UserBundle:Utilisateur')->findOneByIdFosUser($user->getId());
+	    
 	        $repo = $em->getRepository('UserBundle:User')->findOneById($user->getId());
-	        
-	        return $this->render('UserBundle:Parameters:parameters.html.twig', array(
-	            'user'=>$user,
-	            'datauser'=>$repository,
-	        	'repo'=>$repo,
-	        
-	        ));
-	}
-	/*public function modifyProfilAction (Request $request)
-    {
-        $em = $this->getDoctrine()->getManager();
-        
-        //declaration des variables
-        	$prenom = $request->request->get('prenom');
-	        $nom = $request->request->get('nom');
-	        $email = $request->request->get('email');
-	        $date_de_naissance= $request->request->get('date_de_naissance');
-	        $username = $request->request->get('username');
-	        $github = $request->request->get('github');
-	        $linkedin = $request->request->get('linkedin');
-	        $twitter = $request->request->get('twitter');
-	        $doyoubuzz = $request->request->get('doyoubuzz');
-	        $bio = $request->request->get('bio');
-        
-        //appel des tables
-       		$user = $this ->getUser();
-        	$repository = $em->getRepository('UserBundle:Utilisateur')->findOneById_user($user->getId());
-        	$repo = $em->getRepository('UserBundle:User')->findOneById_user($user->getId());
-
-    	 	$utilisateur = new Utilisateur();
-            $utilisateur->setIdFosUser($user)
-                        ->setNom($nom)
-                        ->setPrenom($prenom)
-                        ->setDateDeNaissance($convertDate)
-                        ->setTwitter($twitter)
-                        ->setLinkedin($linkedin)
-                        ->setDoyoubuzz($doyoubuzz)
-                        ->setGithub($github)
-                        ->setBiographie($biographie)
-                        ->setVisible(1)
-            ;
-
-            $em->persist($utilisateur);
-            $em->flush();
-
-            return $this->render('UserBundle:Parameters:parameters.html.twig', array(
-	            'user'=>$user,
-	            'datauser'=>$repository,
-	        	'repo'=>$repo,
-	        ));
-        
-    }*/
-    public function modifyAction(Request $request)
-    {
         /** @var $formFactory \FOS\UserBundle\Form\Factory\FactoryInterface */
         $formFactory = $this->get('fos_user.registration.form.factory');
         /** @var $userManager \FOS\UserBundle\Model\UserManagerInterface */
@@ -170,6 +110,9 @@ class ParametersController extends Controller
 
         return $this->render('UserBundle:Parameters:parameters.html.twig', array(
             'form' => $form->createView(),
+            'user'=>$user,
+            'datauser'=>$repository,
+        	'repo'=>$repo,
         ));
     }
 }

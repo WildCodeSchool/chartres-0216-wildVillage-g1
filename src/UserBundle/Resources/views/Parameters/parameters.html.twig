@@ -21,7 +21,9 @@
 	          <span class="input-group-addon">
         			<input type="checkbox" aria-label="...">
       			</span>
-	          <input type="text" class="form-control" id="Input_username" placeholder="{{ app.user.username }}">
+      			<div class="form-group col-lg-6">
+	          {{ form_widget(form.username, {'attr': {'class': 'form-control obligatoire', 'placeholder': 'Nom dutilisateur'}}) }}
+	      </div>
 	          <span class="input-group-btn">
         			<button class="btn btn-default" type="button">Go!</button>
       			</span>
@@ -69,6 +71,7 @@
 	        </div>
 	       	<label for="Input_email">Email</label>
 	        <div class="input-group">
+
 	          <span class="input-group-addon">
         			<input type="checkbox" aria-label="...">
       			</span>	          
@@ -129,7 +132,7 @@
         			<button class="btn btn-default" type="button">Go!</button>
       			</span>
 	        </div>
-	        <button type="submit" class="btn btn-primary pull-right" value="{{ 'registration.submit'|trans }}" >Enregistrer</button>
+	        <input type="submit" class="btn btn-primary pull-right" value="{{ 'registration.submit'|trans }}" >
 	      </form>
 	    </div>
 		{{ form_end(form) }}
