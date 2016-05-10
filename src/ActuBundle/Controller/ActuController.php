@@ -10,7 +10,22 @@ class ActuController extends Controller
 {
     public function actuAction()
     {
-        return $this->render('ActuBundle:Actu:actu.html.twig');
+        //Affichage du flux des posts
+        $repoActu = $this->getDoctrine()->getRepository('ActuBundle:Post');
+
+        $fluxPost = $repoActu->findAll();
+
+        $tabPost = [];
+        
+        foreach ($fluxPost as $msg)
+        {
+            $tabPost[] = array(
+                'billet' => $msg->getBillet(),            
+            );
+        }
+        return $this->render('ActuBundle:Actu:actu.html.twig', array(
+            'flux'=>$tabPost,
+        ));
     }
 
     public function sidebarAction (Request $request)

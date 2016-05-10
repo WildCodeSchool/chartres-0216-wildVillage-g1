@@ -42,11 +42,12 @@
 	        <p>Nombre de commentaires écrits : 17</p>
 	      </div>
 
-	      <div class="section col-lg-12 col-md-12">
+
 					{% for x in postUser %}
-      			<p>{{ x['billet'] }}</p>
+						<div class="section col-lg-12 col-md-12">
+      				<p>{{ x['billet'] }}</p>
+      			</div>
     			{% endfor %}
-	      </div>
 
 	    </div>
 
