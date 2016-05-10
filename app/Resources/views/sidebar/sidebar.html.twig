@@ -1,3 +1,9 @@
 <div class="bloc_amis col-md-offset-1 col-md-2">
-	<p>Ici vous verrez tous vos amis !!</p>
+  
+	<ul>        
+    {% for x in sidebar_user %}
+      <li>{{ x.username }}</li>
+    {% endfor %}
+	</ul>
+
 </div>

@@ -44,7 +44,9 @@
 
 			</div>
 
-      {% block sidebar %}{% include ('sidebar/sidebar.html.twig') %}{% endblock %}
+      <div id="sidebar">
+            {{ render(controller('ActuBundle:Actu:sidebar')) }}
+      </div>
 
 		</div>
 	</div>
