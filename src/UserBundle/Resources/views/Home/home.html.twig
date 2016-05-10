@@ -50,10 +50,10 @@
 				  </fieldset>
 				</form>
 
-	        <div class="section col-lg-12 col-md-12">
+	        <div class="sectionhome col-lg-12 col-md-12">
 			{% for x in postuser|reverse %}
 				<div class="post">
-	      			<p>{{ x['date']| date("H:i m/d/Y") }}</p>
+	      			<p>{{ x['date']| date("H:i d/m/Y") }}</p>
 	      			<p>{{ x['message'] }}</p>
       			</div>
     			{% endfor %}

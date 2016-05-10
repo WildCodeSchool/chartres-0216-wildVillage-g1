@@ -62,8 +62,22 @@
 
 .section{
 	margin-top: 15px;
+	background-color: rgba(0, 0, 0, 0.5);
 	color: white;
 }
+
+.sectionhome{
+	margin-top: 15px;
+	color: white;
+}
+
+.post{
+	padding: 10px;
+	margin-bottom: 20px;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #000;
+}
+
 
 .post{
 	padding: 10px;
