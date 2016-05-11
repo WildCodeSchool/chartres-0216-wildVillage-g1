@@ -5,6 +5,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use MessagerieBundle\Entity\Message;
 use UserBundle\Entity\User;
+use UserBundle\Entity\Utilisateur;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class MessagerieController extends Controller
@@ -36,23 +37,24 @@ class MessagerieController extends Controller
        {
         $em = $this->getDoctrine()->getManager();
         $user = $this->container->get('security.context')->getToken()->getUser();
+
         $message = $request->request->get('message');
         $destinataire = $request->request->get('destinataire');
 
-        // $requestdestinataire = $em->getRepository('UserBundle:User')->findOneById($destinataire);
-        // $requestmessage = $em->getRepository('UserBundle:User');
+        $requestmessage = $em->getRepository('UserBundle:User')->findOneById($destinataire);
 
-
-        $idDest = $destinataire->getId();
+        $idDest = $requestmessage->getId();
         $object = new Message();
         $object->setMessage($message);
         $object->setAuteur($user->getId());
         $object->setDestinataire($idDest);
+
         $em->persist($object);
         $em->flush();
-        $url = $this->generateUrl('messagerie');
-        $response = new RedirectResponse($url);
-        return $response;
+
+        // $url = $this->generateUrl('messagerie');
+        // $response = new RedirectResponse($url);
+         return toto;
         }
 
 
