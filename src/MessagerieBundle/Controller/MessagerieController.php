@@ -25,7 +25,7 @@ class MessagerieController extends Controller
 
         foreach ($listerecus as $msg)
         {
-            $thisAuteur = $em->getRepository('AppBundle:User')->findOneById($msg->getAuteur());
+            $thisAuteur = $em->getRepository('UserBundle:User')->findOneById($msg->getAuteur());
             $tab[] = array(
                 'auteur' => $thisAuteur->getUsername(),
                 'message' => $msg->getMessage(),            
