@@ -8,12 +8,14 @@
 
 	<div class="row">
 
-		<div class="bloc_principal col-md-offset-1 col-md-7">
-		{% if error %}
-			<div class="row">
-    			<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    		</div>
-		{% endif %}
+		<div class="bloc_principal_login col-md-offset-1 col-md-7">
+
+			{% if error %}
+				<div class="row">
+	    		<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+	    	</div>
+			{% endif %}
+
 			<div class="content">
 
        			<div class="section col-lg-12 col-md-12 register">
@@ -24,11 +26,11 @@
         		</div>
 
        			<div class="section col-lg-12 col-md-12 log">
-          			<h2 id="titre-connect">Se connecter</h2>
 
-					<form  class="login-formulaire" action="{{ path("user_check") }}" method="post">
+          		<h2 id="titre-connect">Se connecter</h2>
 
-					<div class="col-md-12 register-title"></div>
+							<form  class="login-formulaire" action="{{ path("user_check") }}" method="post">
+								<div class="col-md-12 register-title"></div>
 
 
 
@@ -38,7 +40,7 @@
 						<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 
 
-			    		<div class="col-md-4 col-md-offset-2">
+			    		<div class="login_user col-md-4 col-md-offset-2">
 					    	<label>Nom d'utilisateur</label>
 					    </div>
 						<div class="col-md-6">
@@ -47,7 +49,7 @@
 
 					</div>
 
-					<div class="col-md-12 register-form">
+					<div class="login_user col-md-12 register-form">
 			    		<div class="col-md-4 col-md-offset-2">
 					    	<label>Mot de passe</label>
 					    </div>
@@ -56,7 +58,7 @@
 					    </div>
 					</div>
 
-					<div class="col-md-12 register-form">
+					<div class="login_user col-md-12 register-form">
 			    		<div class="col-md-4 col-md-offset-2">
 					    	<label>Se souvenir de moi</label>
 					    </div>

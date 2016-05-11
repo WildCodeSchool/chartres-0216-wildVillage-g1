@@ -52,20 +52,20 @@
 			      			<p>{{ x['date']| date("H:i d/m/Y") }}</p>
 			      			<p>{{ x['message'] }}</p>
 
-			      			{% for x in postcom|reverse %}
+{# 			      			{% for x in postcom|reverse %}
 
 									<div class="post">
 										<p><strong>{{ x['auteur'] }}</strong></p>
-						      			<p>{{ x['date']| date("H:i d/m/Y") }}</p>
-						      			<p>{{ x['message'] }}</p>
-						      				<form action="{{path ("user_home")}}" method="post">
-										    <label for="exampleTextarea">Commentaires :</label>
-									    	<textarea class="form-control" id="new_com" rows="1" name="com"></textarea>
-										    <input type="submit" value="{{'Postez'|trans}}">
+				      			<p>{{ x['date']| date("H:i d/m/Y") }}</p>
+				      			<p>{{ x['message'] }}</p>
+				      			<form action="{{path ("user_home")}}" method="post">
+									    <label for="exampleTextarea">Commentaires :</label>
+								    	<textarea class="form-control" id="new_com" rows="1" name="com"></textarea>
+									    <input type="submit" value="{{'Postez'|trans}}">
 										</form>
 									</div>
 		      			
-		    				{% endfor %}
+		    				{% endfor %} #}
 
 		      			</div>
 

@@ -71,33 +71,33 @@ class HomeController extends Controller
 		 	);
 		 	$compteur ++;
 
-             //Affichage des commentaires !!!
-            $tab2 = [];
+            //  //Affichage des commentaires !!!
+            // $tab2 = [];
             
-            $repoCom = $this->getDoctrine()->getRepository('ActuBundle:Commentaire');
+            // $repoCom = $this->getDoctrine()->getRepository('ActuBundle:Commentaire');
           
-            $fluxpost = $repoCom->findAll();
+            // $fluxpost = $repoCom->findAll();
             
-            foreach ($fluxpost as $printcom) {
+            // foreach ($fluxpost as $printcom) {
             
-                $auteur = $em->getRepository('UserBundle:User')->findOneById($printcom->getAuteur());
+            //     $auteur = $em->getRepository('UserBundle:User')->findOneById($printcom->getAuteur());
                     
-               // $test = $em->getRepository('ActuBundle:Commentaire')->findOneById($printcom->getidPost());
+            //    // $test = $em->getRepository('ActuBundle:Commentaire')->findOneById($printcom->getidPost());
 
-                    $tab2[] = array(
-                   //     'idpost'    => $printcom   ->getidPost()->getId(),
+            //         $tab2[] = array(
+            //        //     'idpost'    => $printcom   ->getidPost()->getId(),
 
                      
-                        'auteur'    => $auteur     ->getUsername(),
-                        'message'   => $printcom   ->getCommentaire(),
-                        'date'      => $printcom   ->getdatePublication(),
+            //             'auteur'    => $auteur     ->getUsername(),
+            //             'message'   => $printcom   ->getCommentaire(),
+            //             'date'      => $printcom   ->getdatePublication(),
                        
-                    );
-                    // if($tab[0]['idpost'] == $tab2[0]['idpost'])
-                    // { 
+            //         );
+            //         // if($tab[0]['idpost'] == $tab2[0]['idpost'])
+            //         // { 
                       
-                    // };
-                }
+            //         // };
+            //     }
 		}
 // var_dump($tab[0]['idpost']);
 // var_dump($tab2[0]['idpost']);exit;
@@ -110,7 +110,7 @@ class HomeController extends Controller
         	'repo'=>$repo,
         	'postuser'=>$tab,
         	'compteur'=>$compteur,
-            'postcom'=>$tab2,
+            // 'postcom'=>$tab2,
         ));
     }
 

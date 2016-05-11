@@ -1,3 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+
+body {
+	font-family: 'Ubuntu', sans-serif;
+}
 /*COMMUN A TOUTES LES PAGES*/
 
 .bloc_principal {
@@ -6,8 +11,28 @@
 	background-color: white;
 }
 h3 {
-	color: rgb(237, 175, 80);
+	color: white;
 }
+
+/*--------------------------------------*/
+/*PAGE LOGIN*/
+
+.bloc_principal_login {
+	margin-top: 80px;
+	background-color: white;
+}
+
+.bg-social {
+	background: url(../img/social3.jpeg);
+	background-position: center;
+	background-size: cover;
+	height:100vh;
+}
+
+.login_user label{
+	color:black;
+}
+
 /*--------------------------------------*/
 /*MENU navbar*/
 
@@ -32,9 +57,10 @@ h3 {
 }
 
 .flux {
+	margin-top: 10px;
 	padding: 10px;
 	margin-bottom: 20px;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(240, 240, 240, 0.5);
 }
 
 
@@ -73,28 +99,24 @@ h3 {
 .sectionhome{
 	margin-top: 15px;
 	color: white;
+	background-color: rgba(240, 240, 240, 1);
 }
 
 .post{
+	margin-top: 10px;
 	padding: 10px;
 	margin-bottom: 20px;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: white;
 	color: #000;
 }
 
-
-.post{
-	padding: 10px;
-	margin-bottom: 20px;
-	background-color: rgba(0, 0, 0, 0.5);
-	color: #000;
+.bloc_amis > ul > li > a {
+	margin: 55px;
+	font-size: 15px;
 }
 
-.bg-social {
-	background: url(../img/social3.jpeg);
-	background-position: center;
-	background-size: cover;
-}
+
+
 
 .register {
 	display: flex;
@@ -178,4 +200,12 @@ label {
 .user-home {
 	background: rgba(240,240,240,1);
 
+}
+
+.page-actu {
+background: rgba(240,240,240,1);
+}
+
+.formulaire1 p {
+color: white;
 }

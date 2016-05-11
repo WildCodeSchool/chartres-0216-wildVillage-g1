@@ -19,7 +19,7 @@ security:
                 csrf_token_generator: security.csrf.token_manager
                 login_path:     user_login
                 check_path:     user_check
-                default_target_path:    user_show
+                default_target_path:    actu_homepage
 
 
 
