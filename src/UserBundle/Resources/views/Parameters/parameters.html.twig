@@ -5,8 +5,16 @@
 <div class="formulaire1 col-lg-offset-1 col-lg-4 col-lg-offset-1 col-md-offset-1 col-md-4 col-md-offset-1 col-sm-10 col-xs-10"><h3><b>{{ app.user.username }}</b>,<h3>Mes informations</h3></div>
 <div class="col-md-12">
 	
-	<div class="col-md-6 form_espace">
+	<div class="col-md-12 form_espace">
 		<form action="{{ path("user_parameters") }}" method="post" class="espace_modif">
+			<div class="col-md-12">
+				<label for="username">Username :</label>
+				<input type="string" id="username" name="username" value="{{ datauser.username }}"/>
+			</div>
+			<div class="col-md-12">
+				<label for="email">Email :</label>
+				<input type="string" id="email" name="email" value="{{ datauser.email }}"/>
+			</div>
 			
 			<div class="col-md-12">
 				<label for="nom">Nom :</label>
@@ -17,13 +25,13 @@
 				<input type="string" id="prenom" name="prenom" value="{{ requete_infos.prenom }}"/>
 			</div>
 			<div class="col-md-12">
-				<label for="age">Date de naissance :</label>
-				<input type="string" id="date_de_naissance" name="date_de_naissance" value="{{ requete_infos.age }}"/>
+				<label for="date_de_naissance">Date de naissance :</label>
+				<input type="string" id="date_de_naissance" name="date_de_naissance" value="{{ requete_infos.date_de_naissance }}"/>
 			</div>
 			<div class="col-md-12">
-				<label for="biographie" class="labelbio">Biographie :</label>
-				<textarea id="biographie" name="biographie">{{ requete_infos.biographie }}</textarea>
-			</div><br>
+				<label for="biographie">Biographie :</label>
+				<input type="string" id="biographie" name="biographie" value="{{ requete_infos.biographie }}"/>
+			</div>
 			<div class="col-md-12">
 				<label for="github">Github :</label>
 				<input type="string" id="github" name="github" value="{{ requete_infos.github }}"/>

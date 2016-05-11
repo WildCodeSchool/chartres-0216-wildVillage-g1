@@ -156,7 +156,7 @@ class Utilisateur
      *
      * @return Utilisateur
      */
-    public function setDate_de_naissance($age)
+    public function setDate_de_naissance($date_de_naissance)
     {
         $this->date_de_naissance = $date_de_naissance;
 

@@ -19,7 +19,9 @@ class ParametersController extends Controller
         $repo = $em->getRepository('UserBundle:User')->findOneById($user->getId());
 
         
-        $requestinfos = $em->getRepository('UserBundle:Utilisateur')->findOneById($user->getId())
+        $requestinfos = $em->getRepository('UserBundle:Utilisateur')->findOneById($user->getId());
+
+
         $newNom = $request->request->get('nom');
         $newPrenom = $request->request->get('prenom');
         $newBiographie = $request->request->get('biographie');
@@ -29,14 +31,15 @@ class ParametersController extends Controller
         $newDoyoubuzz = $request->request->get('doyoubuzz');
         $newDate_de_naissance = $request->request->get('date_de_naissance');
 
+
         $requestinfos->setNom($newNom);
-        $requestinfos->setPrenom($prenom);
-        $requestinfos->setBiographie($biographie);
-        $requestinfos->setGithub($github);
-        $requestinfos->setLinkedin($linkedin);
-        $requestinfos->setTwitter($twitter);
-        $requestinfos->setDoyoubuzz($doyoubuzz);
-        $requestinfos->setDate_de_naissance($date_de_naissance); 
+        $requestinfos->setPrenom($newPrenom);
+        $requestinfos->setBiographie($newBiographie);
+        $requestinfos->setGithub($newGithub);
+        $requestinfos->setLinkedin($newLinkedin);
+        $requestinfos->setTwitter($newTwitter);
+        $requestinfos->setDoyoubuzz($newDoyoubuzz);
+        $requestinfos->setDate_de_naissance($newDate_de_naissance); 
 
             
         
