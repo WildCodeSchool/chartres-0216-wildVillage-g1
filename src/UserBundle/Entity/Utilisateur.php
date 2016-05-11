@@ -43,9 +43,9 @@ class Utilisateur
     private $prenom;
 
     /**
-     * @var int
+     * @var date
      *
-     * @ORM\Column(name="Date_de_naissance", type="integer",length=2 , nullable=false)
+     * @ORM\Column(name="Date_de_naissance", type="date" , nullable=false)
      */
     private $date_de_naissance;
 
@@ -152,7 +152,7 @@ class Utilisateur
     /**
      * Set dateDeNaissance
      *
-     * @param integer $age
+     * @param date $date_de_naissance
      *
      * @return Utilisateur
      */
@@ -166,7 +166,7 @@ class Utilisateur
     /**
      * Get date_de_naissance
      *
-     * @return string
+     * @return date
      */
     public function getDate_de_naissance()
     {

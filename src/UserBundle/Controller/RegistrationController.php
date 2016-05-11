@@ -95,7 +95,7 @@ class RegistrationController extends Controller
             $utilisateur->setIdFosUser($user)
                         ->setNom($nom)
                         ->setPrenom($prenom)
-                        ->setDateDeNaissance($convertDate)
+                        ->setDate_de_naissance($convertDate)
                         ->setTwitter($twitter)
                         ->setLinkedin($linkedin)
                         ->setDoyoubuzz($doyoubuzz)

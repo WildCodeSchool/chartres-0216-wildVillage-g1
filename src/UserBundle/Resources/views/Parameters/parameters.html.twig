@@ -11,6 +11,8 @@
 		<form action="{{ path("user_parameters") }}" method="post" class="espace_modif">
 
 			<div class="col-md-6 form_espace">
+
+				<input type="hidden" name="update" value="1"/>
 		
 			
 				<div class="col-md-12 form-group">
@@ -23,7 +25,7 @@
 				</div>
 				<div class="col-md-12 form-group">
 					<label for="date_de_naissance">Date de naissance :</label>
-					<input type="string" class="form-control obligatoire" id="date_de_naissance" name="date_de_naissance" value="{{ requete_infos.date_de_naissance }}"/>
+					<input type="string" class="form-control obligatoire" id="date_de_naissance" name="date_de_naissance" value="{{ requete_infos.date_de_naissance|date('Y-m-d') }}"/>
 				</div>
        			<div class="col-md-12 form-group">
 					<label for="biographie">Biographie :</label>
