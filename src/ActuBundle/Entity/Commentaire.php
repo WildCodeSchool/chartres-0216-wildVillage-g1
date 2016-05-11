@@ -31,7 +31,7 @@ class Commentaire
     /**
      * @var string
      *
-     * @ORM\OneToOne(targetEntity="UserBundle\Entity\Utilisateur", cascade={"persist"})
+     * @ORM\OneToOne(targetEntity="UserBundle\Entity\User", cascade={"persist"})
      */
     private $auteur;
 
