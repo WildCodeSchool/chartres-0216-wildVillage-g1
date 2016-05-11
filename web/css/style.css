@@ -2,8 +2,8 @@
 
 .bloc_principal {
 	margin-top: 80px;
-	
-	background-color: rgba(240, 240, 240, 0.9);
+
+	background-color: white;
 }
 h3 {
 	color: rgb(237, 175, 80);
@@ -66,8 +66,8 @@ h3 {
 
 .section{
 	margin-top: 15px;
-	background-color: rgba(0, 0, 0, 0.5);
-	color: white;
+	background-color: rgba(240, 240, 240, 1);
+	color: black;
 }
 
 .sectionhome{
@@ -166,8 +166,8 @@ label {
 /*--------------------------------------*/
 
 .bloc_amis{
-	margin-top: 95px;
-	border: 1px solid black;
+	margin-top: 80px;
+	background: white;
 	height:600px;
 }
 
@@ -176,12 +176,6 @@ label {
 }
 
 .user-home {
-	background: rgba(255,255,255,1);
-	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(205,237,244,1) 100%);
-	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(205,237,244,1)));
-	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(205,237,244,1) 100%);
-	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(205,237,244,1) 100%);
-	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(205,237,244,1) 100%);
-	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(205,237,244,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cdedf4', GradientType=0 );
+	background: rgba(240,240,240,1);
+
 }

@@ -9,7 +9,7 @@
 	       		<div class="section col-lg-12 col-md-12">
 	        		<div class="row">
 		        		<div class="profil1 col-lg-5">
-		 					<ul>
+		 					<ul class="list-unstyled">
 		 						<li>Nom d'utilisateur : {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 	              				{{ app.user.username }}
 	             				 {% endif %}</li>
@@ -19,7 +19,7 @@
 							</ul>
 						</div>
 						<div class="profil2 col-lg-offset-1 col-lg-5">
-		 					<ul>
+		 					<ul class="list-unstyled">
 		 						<li>Compte github : {{ datauser.github }} </li>
 								<li>Compte twitter : {{ datauser.twitter }}</li>
 								<li>Compte doyoubuzz : {{ datauser.doyoubuzz }}</li>
