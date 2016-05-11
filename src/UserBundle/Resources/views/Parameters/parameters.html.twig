@@ -7,41 +7,38 @@
 	
 	<div class="col-md-6 form_espace">
 		<form action="{{ path("user_parameters") }}" method="post" class="espace_modif">
-			<div class="col-md-12">
-				<label for="username">Pseudo :</label>
-				<input type="text" id="username" name="username" value="{{ app.user.username }}"/>
-			</div>
+			
 			<div class="col-md-12">
 				<label for="nom">Nom :</label>
-				<input type="string" id="nom" name="nom" value="{{ datauser.nom }}"/>
+				<input type="string" id="nom" name="nom" value="{{ requete_infos.nom }}"/>
 			</div>
 			<div class="col-md-12">
 				<label for="prenom">Prenom :</label>
-				<input type="string" id="prenom" name="prenom" value="{{ datauser.prenom }}"/>
+				<input type="string" id="prenom" name="prenom" value="{{ requete_infos.prenom }}"/>
 			</div>
 			<div class="col-md-12">
-				<label for="age">Age :</label>
-				<input type="string" id="age" name="age" value="{{ datauser.age }}"/>
+				<label for="age">Date de naissance :</label>
+				<input type="string" id="date_de_naissance" name="date_de_naissance" value="{{ requete_infos.age }}"/>
 			</div>
 			<div class="col-md-12">
 				<label for="biographie" class="labelbio">Biographie :</label>
-				<textarea id="biographie" name="biographie">{{ datauser.biographie }}</textarea>
+				<textarea id="biographie" name="biographie">{{ requete_infos.biographie }}</textarea>
 			</div><br>
 			<div class="col-md-12">
 				<label for="github">Github :</label>
-				<input type="string" id="github" name="github" value="{{ datauser.github }}"/>
+				<input type="string" id="github" name="github" value="{{ requete_infos.github }}"/>
 			</div>
 			<div class="col-md-12">
 				<label for="linkedin">Linkedin :</label>
-				<input type="string" id="linkedin" name="linkedin" value="{{ datauser.linkedin }}"/>
+				<input type="string" id="linkedin" name="linkedin" value="{{ requete_infos.linkedin }}"/>
 			</div>
 			<div class="col-md-12">
 				<label for="twitter">Twitter :</label>
-				<input type="string" id="twitter" name="twitter" value="{{ datauser.twitter }}"/>
+				<input type="string" id="twitter" name="twitter" value="{{ requete_infos.twitter }}"/>
 			</div>
 			<div class="col-md-12">
 				<label for="doyoubuzz">Doyoubuzz :</label>
-				<input type="string" id="doyoubuzz" name="doyoubuzz" value="{{ datauser.doyoubuzz }}"/>
+				<input type="string" id="doyoubuzz" name="doyoubuzz" value="{{ requete_infos.doyoubuzz }}"/>
 			</div>
 			<div class="col-md-12">
 				<input type="submit" class="btnlogin" id="_submit" name="submit" value="Envoyer" />

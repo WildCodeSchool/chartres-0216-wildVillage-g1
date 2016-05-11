@@ -4,6 +4,9 @@ namespace UserBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use FOS\UserBundle\Model\UserInterface;
+use UserBundle\Entity\Utilisateur;
+use \DateTime;
 
 class ParametersController extends Controller
 {
@@ -13,49 +16,35 @@ class ParametersController extends Controller
         $em = $this->getDoctrine()->getManager();
         $user = $this->container->get('security.context')->getToken()->getUser();
         $repository = $em->getRepository('UserBundle:Utilisateur')->findOneByIdFosUser($user->getId());
+        $repo = $em->getRepository('UserBundle:User')->findOneById($user->getId());
 
-        $nom = $request->request->get('nom');
-        $prenom = $request->request->get('prenom');
-        $biographie = $request->request->get('biographie');
-        $age = $request->request->get('age');
-        $github = $request->request->get('github');
-        $linkedin = $request->request->get('linkedin');
-        $twitter = $request->request->get('twitter');
-        $doyoubuzz = $request->request->get('doyoubuzz');
-        $requestinfos = $em->getRepository('UserBundle:Utilisateur')->findOneById($user->getId());
-        /*$hidden = $request->request->get('hidden');*/
+        
+        $requestinfos = $em->getRepository('UserBundle:Utilisateur')->findOneById($user->getId())
+        $newNom = $request->request->get('nom');
+        $newPrenom = $request->request->get('prenom');
+        $newBiographie = $request->request->get('biographie');
+        $newGithub = $request->request->get('github');
+        $newLinkedin = $request->request->get('linkedin');
+        $newTwitter = $request->request->get('twitter');  
+        $newDoyoubuzz = $request->request->get('doyoubuzz');
+        $newDate_de_naissance = $request->request->get('date_de_naissance');
 
-        /*if ($hidden == 1){*/
-            if (!empty($nom)) {
-                $requestinfos->setNom($nom);
-            }
-            if (!empty($prenom)) {
-                $requestinfos->setPrenom($prenom);
-            }
-            if (!empty($biographie)) {
-                $requestinfos->setBiographie($biographie);
-            }
-            if (!empty($github)) {
-                $requestinfos->setGithub($github);
-            }
-            if (!empty($linkedin)) {
-                $requestinfos->setLinkedin($linkedin);
-            }
-            if (!empty($twitter)) {
-                $requestinfos->setTwitter($twitter);
-            }
-            if (!empty($doyoubuzz)) {
-                $requestinfos->setDoyoubuzz($doyoubuzz);
-            }
-            if (!empty($age)) {
-                $requestinfos->setAge($age);
-            }
-            $em->persist($requestinfos);
-            $em->flush();
-        /*}*/
+        $requestinfos->setNom($newNom);
+        $requestinfos->setPrenom($prenom);
+        $requestinfos->setBiographie($biographie);
+        $requestinfos->setGithub($github);
+        $requestinfos->setLinkedin($linkedin);
+        $requestinfos->setTwitter($twitter);
+        $requestinfos->setDoyoubuzz($doyoubuzz);
+        $requestinfos->setDate_de_naissance($date_de_naissance); 
+
+            
+        
+        $em->flush();
+      
         return $this->render('UserBundle:Parameters:parameters.html.twig', array(
             'requete_infos' => $requestinfos,
-            'datauser'=>$repository,
+            'datauser'=>$repo,
         ));   
     }
 }
