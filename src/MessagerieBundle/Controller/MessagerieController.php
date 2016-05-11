@@ -14,20 +14,17 @@ class MessagerieController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $user = $this->container->get('security.context')->getToken()->getUser();
-
         $iduser= $user->getId();
         $tab = [];
         $listerecus = $em->getRepository('MessagerieBundle:Message')->findById($iduser);
-
         foreach ($listerecus as $message)
         {
             $thisExpediteur = $em->getRepository('UserBundle:User')->findOneById($message->getExpediteur());
             $tab[] = array(
-                'expediteur' => $thisExpediteur->getUsername(),
+                'expediteur' => $message->getExpediteur(),
                 'message' => $message->getMessage(),
             );
         }
-
         return $this->render('MessagerieBundle:Messagerie:messagerie.html.twig',array(
             'tab'=> $tab,
         ));
@@ -43,18 +40,22 @@ class MessagerieController extends Controller
 
         $requestmessage = $em->getRepository('UserBundle:User')->findOneById($destinataire);
 
-        $idDest = $requestmessage->getId();
+        // $idDest = $requestmessage->getId();
+
+        // $idexp = $user->getId();
+
         $object = new Message();
         $object->setMessage($message);
-        $object->setAuteur($user->getId());
-        $object->setDestinataire($idDest);
+        $object->setExpediteur($user->getId());
+        // $object->setDestinataire($idDest);
 
         $em->persist($object);
+
         $em->flush();
 
-        // $url = $this->generateUrl('messagerie');
-        // $response = new RedirectResponse($url);
-         return toto;
+        $url = $this->generateUrl('messagerie_new');
+        $response = new RedirectResponse($url);
+         return $response;
         }
 
 

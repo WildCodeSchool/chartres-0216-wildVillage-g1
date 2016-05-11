@@ -24,14 +24,14 @@ class Message
     /**
      * @var int
      *
-     *@ORM\Column(name="Expediteur", type="integer", nullable=true)
+     *@ORM\Column(name="Expediteur", type="integer")
      */
     private $expediteur;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="Destinataire", type="integer", nullable=true)
+     * @ORM\Column(name="Destinataire", type="integer")
      */
     private $destinataire;
 
@@ -65,6 +65,20 @@ class Message
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set expéditeur
+     *
+     * @param string $expéditeur
+     *
+     * @return Message
+     */
+    public function setExpéditeur($expediteur)
+    {
+        $this->expediteur = $expediteur;
+
+        return $this;
     }
 
     /**
@@ -171,19 +185,5 @@ class Message
     public function getDateEnvoi()
     {
         return $this->dateEnvoi;
-    }
-
-    /**
-     * Set expediteur
-     *
-     * @param integer $expediteur
-     *
-     * @return Message
-     */
-    public function setExpediteur($expediteur)
-    {
-        $this->expediteur = $expediteur;
-
-        return $this;
     }
 }
