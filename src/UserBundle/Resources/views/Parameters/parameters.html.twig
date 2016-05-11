@@ -2,56 +2,64 @@
 
 
 {% block body %}
-<div class="formulaire1 col-lg-offset-1 col-lg-4 col-lg-offset-1 col-md-offset-1 col-md-4 col-md-offset-1 col-sm-10 col-xs-10"><h3><b>{{ app.user.username }}</b>,<h3>Mes informations</h3></div>
-<div class="col-md-12">
-	
-	<div class="col-md-12 form_espace">
+
+<div class="container-fluid bg-social">
+
+	<div class="formulaire1 col-lg-offset-1 col-lg-4 col-lg-offset-1 col-md-offset-1 col-md-4 col-md-offset-1 col-sm-10 col-xs-10"><br/><br/><h3><b>{{ app.user.username }}</b><b>{{ datauser.email }}</b>,<h3>Mes informations</h3></div>
+	<div class="col-md-12">
+
 		<form action="{{ path("user_parameters") }}" method="post" class="espace_modif">
-			<div class="col-md-12">
-				<label for="username">Username :</label>
-				<input type="string" id="username" name="username" value="{{ datauser.username }}"/>
-			</div>
-			<div class="col-md-12">
-				<label for="email">Email :</label>
-				<input type="string" id="email" name="email" value="{{ datauser.email }}"/>
-			</div>
+
+			<div class="col-md-6 form_espace">
+		
 			
-			<div class="col-md-12">
-				<label for="nom">Nom :</label>
-				<input type="string" id="nom" name="nom" value="{{ requete_infos.nom }}"/>
+				<div class="col-md-12 form-group">
+					<label for="nom">Nom :</label>
+					<input type="string" class="form-control obligatoire" id="nom" name="nom" value="{{ requete_infos.nom }}"/>
+				</div>
+				<div class="col-md-12 form-group">
+					<label for="prenom">Prenom :</label>
+					<input type="string" class="form-control obligatoire" id="prenom" name="prenom" value="{{ requete_infos.prenom }}"/>
+				</div>
+				<div class="col-md-12 form-group">
+					<label for="date_de_naissance">Date de naissance :</label>
+					<input type="string" class="form-control obligatoire" id="date_de_naissance" name="date_de_naissance" value="{{ requete_infos.date_de_naissance }}"/>
+				</div>
+       			<div class="col-md-12 form-group">
+					<label for="biographie">Biographie :</label>
+					<input type="string" class="form-control obligatoire" id="biographie" name="biographie" value="{{ requete_infos.biographie }}"/>
+				</div>
+    		</div>	
+
+    		<div class="col-md-6 form_espace">
+			
+				<div class="col-md-12 form-group">
+					<label for="github">Github :</label>
+					<input type="string" class="form-control obligatoire" id="github" name="github" value="{{ requete_infos.github }}"/>
+				</div>
+				<div class="col-md-12 form-group">
+					<label for="linkedin">Linkedin :</label>
+					<input type="string" class="form-control obligatoire" id="linkedin" name="linkedin" value="{{ requete_infos.linkedin }}"/>
+				</div>
+				<div class="col-md-12 form-group">
+					<label for="twitter">Twitter :</label>
+					<input type="string" class="form-control obligatoire" id="twitter" name="twitter" value="{{ requete_infos.twitter }}"/>
+				</div>
+				<div class="col-md-12 form-group">
+					<label for="doyoubuzz">Doyoubuzz :</label>
+					<input type="string" class="form-control obligatoire" id="doyoubuzz" name="doyoubuzz" value="{{ requete_infos.doyoubuzz }}"/>
+				</div>
+			
 			</div>
-			<div class="col-md-12">
-				<label for="prenom">Prenom :</label>
-				<input type="string" id="prenom" name="prenom" value="{{ requete_infos.prenom }}"/>
+			<div class=" col-md-12">
+				<input type="submit" class="btnlogin btn-success" id="_submit" name="submit" value="Envoyer" />	
 			</div>
-			<div class="col-md-12">
-				<label for="date_de_naissance">Date de naissance :</label>
-				<input type="string" id="date_de_naissance" name="date_de_naissance" value="{{ requete_infos.date_de_naissance }}"/>
-			</div>
-			<div class="col-md-12">
-				<label for="biographie">Biographie :</label>
-				<input type="string" id="biographie" name="biographie" value="{{ requete_infos.biographie }}"/>
-			</div>
-			<div class="col-md-12">
-				<label for="github">Github :</label>
-				<input type="string" id="github" name="github" value="{{ requete_infos.github }}"/>
-			</div>
-			<div class="col-md-12">
-				<label for="linkedin">Linkedin :</label>
-				<input type="string" id="linkedin" name="linkedin" value="{{ requete_infos.linkedin }}"/>
-			</div>
-			<div class="col-md-12">
-				<label for="twitter">Twitter :</label>
-				<input type="string" id="twitter" name="twitter" value="{{ requete_infos.twitter }}"/>
-			</div>
-			<div class="col-md-12">
-				<label for="doyoubuzz">Doyoubuzz :</label>
-				<input type="string" id="doyoubuzz" name="doyoubuzz" value="{{ requete_infos.doyoubuzz }}"/>
-			</div>
-			<div class="col-md-12">
-				<input type="submit" class="btnlogin" id="_submit" name="submit" value="Envoyer" />
-			</div>
+
 		</form>
-	</div>	
+		
+
+	</div>
+
 </div>
+
 {% endblock %}

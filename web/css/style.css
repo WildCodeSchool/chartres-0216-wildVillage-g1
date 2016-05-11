@@ -3,7 +3,9 @@
 .bloc_principal {
 	padding-top: 80px;
 }
-
+h3 {
+	color: rgb(237, 175, 80);
+}
 /*--------------------------------------*/
 /*MENU navbar*/
 
