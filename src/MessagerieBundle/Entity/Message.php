@@ -24,37 +24,23 @@ class Message
     /**
      * @var int
      *
-     *@ORM\Column(name="Expediteur", type="integer", nullable=true)
+     * @ORM\Column(name="auteur", type="integer", nullable=true)
      */
-    private $expediteur;
+    private $auteur;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="Destinataire", type="integer", nullable=true)
+     * @ORM\Column(name="destinataire", type="integer", nullable=true)
      */
     private $destinataire;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Sujet", type="string", length=255, nullable=true)
-     */
-    private $sujet;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="Message", type="text", nullable=true)
+     * @ORM\Column(name="message", type="text", nullable=true)
      */
     private $message;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="Date_envoi", type="datetime", nullable=true)
-     */
-    private $dateEnvoi;
 
 
     /**
@@ -68,19 +54,33 @@ class Message
     }
 
     /**
-     * Get expéditeur
+     * Set auteur
      *
-     * @return string
+     * @param integer $auteur
+     *
+     * @return Message
      */
-    public function getExpediteur()
+    public function setAuteur($auteur)
     {
-        return $this->expediteur;
+        $this->auteur = $auteur;
+
+        return $this;
+    }
+
+    /**
+     * Get auteur
+     *
+     * @return int
+     */
+    public function getAuteur()
+    {
+        return $this->auteur;
     }
 
     /**
      * Set destinataire
      *
-     * @param string $destinataire
+     * @param integer $destinataire
      *
      * @return Message
      */
@@ -94,35 +94,11 @@ class Message
     /**
      * Get destinataire
      *
-     * @return string
+     * @return int
      */
     public function getDestinataire()
     {
         return $this->destinataire;
-    }
-
-    /**
-     * Set sujet
-     *
-     * @param string $sujet
-     *
-     * @return Message
-     */
-    public function setSujet($sujet)
-    {
-        $this->sujet = $sujet;
-
-        return $this;
-    }
-
-    /**
-     * Get sujet
-     *
-     * @return string
-     */
-    public function getSujet()
-    {
-        return $this->sujet;
     }
 
     /**
@@ -148,42 +124,5 @@ class Message
     {
         return $this->message;
     }
-
-    /**
-     * Set dateEnvoi
-     *
-     * @param \DateTime $dateEnvoi
-     *
-     * @return Message
-     */
-    public function setDateEnvoi($dateEnvoi)
-    {
-        $this->dateEnvoi = $dateEnvoi;
-
-        return $this;
-    }
-
-    /**
-     * Get dateEnvoi
-     *
-     * @return \DateTime
-     */
-    public function getDateEnvoi()
-    {
-        return $this->dateEnvoi;
-    }
-
-    /**
-     * Set expediteur
-     *
-     * @param integer $expediteur
-     *
-     * @return Message
-     */
-    public function setExpediteur($expediteur)
-    {
-        $this->expediteur = $expediteur;
-
-        return $this;
-    }
 }
+
