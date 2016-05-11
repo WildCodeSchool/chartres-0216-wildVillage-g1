@@ -19,7 +19,9 @@ class ParametersController extends Controller
         $repo = $em->getRepository('UserBundle:User')->findOneById($user->getId());
 
         
-        $requestinfos = $em->getRepository('UserBundle:Utilisateur')->findOneById($user->getId());
+        $requestinfos = $em->getRepository('UserBundle:Utilisateur')->findOneByIdFosUser($user);
+
+        
 
 
         $newNom = $request->request->get('nom');
