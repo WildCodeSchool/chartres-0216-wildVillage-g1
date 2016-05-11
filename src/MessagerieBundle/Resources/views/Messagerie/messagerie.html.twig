@@ -1,77 +1,35 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="container-fluid">
-  <div class="row messagerie">
-
+  <div class="container-fluid">
     <div class="bloc_principal col-md-offset-1 col-md-7">
+      <div class="row">
 
-      <form  method="post" action="{{ path ('messagerie_new') }}" class="form-group form-messagerie">
-          <div class="row">
-              <div class="champ-destinataire col-md-6">
-                  <label> Destinataire </label>
-                  <br />
-                  <input type="text" name="destinataire"></input>
-              </div>
-              <div class="sujet col-md-6">
-                  <label> Sujet </label>
-                  <br />
-                  <input type="text" name="Sujet"></input>
-                  <br />
-              </div>
+        <form class="form_messagerie col-md-12" method="post" action="{{ path ('messagerie_new') }}">
+          <div class="form-group">
+            <input type="text" class="form-control" name="destinataire" placeholder="Nom d'utilisateur">
           </div>
-          <label> Nouveau message </label>
-          <textarea class="form-control" id="new_post" name="message" rows="3"></textarea>
-          <input type="submit" value="Envoyer">
-      </form>
+          <div class="form-group">
+            <textarea class="form-control" name="message" rows="5" placeholder="Ecrivez votre wild message ici ..." ></textarea>
+          </div>
+          <input type="submit">
+        </form>
 
-      <div class="section col-lg-12 col-md-12">
-          {% for msg in tab %}
-            <p>{{ msg['expediteur']}}</p>
-            <p>{{ msg['message']}}</p>
-          {% endfor %}
+        {% for msg in tab|reverse %}
+          <div class="col-md-12">
+            <p>{{ msg['auteur']|upper }}</p>
+            <p>{{ msg['message']|lower }}</p>
+          </div>
+        {% endfor %}
 
-      </div>
-
-      <div class="section col-lg-12 col-md-12">
-        <h2>Message reçu le 01/05/2016 de Frédéric</h2>
-        <p>Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
 
       </div>
-
-      <nav>
-        <ul class="pager">
-          <li><a href="#">Previous</a></li>
-          <li><a href="#">Next</a></li>
-        </ul>
-      </nav>
-
-      <div class="section col-lg-12 col-md-12">
-        <h2>Message envoyé le 03/05/2016 à Sylvian</h2>
-        <p>De nombreuses suites logicielles de mise en page ou éditeurs de sites Web ont fait du Lorem Ipsum leur faux texte par défaut, et une recherche pour 'Lorem Ipsum' vous conduira vers de nombreux sites qui n'en sont encore qu'à leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d'y rajouter de petits clins d'oeil, voire des phrases embarassantes).</p>
-        <span><a href="#">Supprimez</a></span>
-      </div>
-
-      <div class="section col-lg-12 col-md-12">
-        <h2>Message envoyé le 02/05/2016 à Thomas</h2>
-        <p>On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il possède une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle du français standard.</p>
-
-      </div>
-
-      <nav>
-        <ul class="pager">
-          <li><a href="#">Previous</a></li>
-          <li><a href="#">Next</a></li>
-        </ul>
-      </nav>
-
     </div>
 
-      <div id="sidebar">
-            {{ render(controller('ActuBundle:Actu:sidebar')) }}
-      </div>
-
+    <div id="sidebar">
+      {{ render(controller('ActuBundle:Actu:sidebar')) }}
     </div>
+
   </div>
 
 {% endblock %}

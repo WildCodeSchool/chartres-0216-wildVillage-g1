@@ -22,39 +22,25 @@ class Message
     private $id;
 
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\Utilisateur", cascade={"persist"})
+     * @ORM\Column(name="auteur", type="integer", nullable=true)
      */
-    private $expediteur;
+    private $auteur;
 
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\OneToOne(targetEntity="UserBundle\Entity\Utilisateur", cascade={"persist"})
+     * @ORM\Column(name="destinataire", type="integer", nullable=true)
      */
     private $destinataire;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Sujet", type="string", length=255, nullable=true)
-     */
-    private $sujet;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="Message", type="text", nullable=true)
+     * @ORM\Column(name="message", type="text", nullable=true)
      */
     private $message;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="Date_envoi", type="datetime", nullable=true)
-     */
-    private $dateEnvoi;
 
 
     /**
@@ -68,33 +54,33 @@ class Message
     }
 
     /**
-     * Set expéditeur
+     * Set auteur
      *
-     * @param string $expéditeur
+     * @param integer $auteur
      *
      * @return Message
      */
-    public function setExpéditeur($expediteur)
+    public function setAuteur($auteur)
     {
-        $this->expediteur = $expediteur;
+        $this->auteur = $auteur;
 
         return $this;
     }
 
     /**
-     * Get expéditeur
+     * Get auteur
      *
-     * @return string
+     * @return int
      */
-    public function getExpediteur()
+    public function getAuteur()
     {
-        return $this->expediteur;
+        return $this->auteur;
     }
 
     /**
      * Set destinataire
      *
-     * @param string $destinataire
+     * @param integer $destinataire
      *
      * @return Message
      */
@@ -108,35 +94,11 @@ class Message
     /**
      * Get destinataire
      *
-     * @return string
+     * @return int
      */
     public function getDestinataire()
     {
         return $this->destinataire;
-    }
-
-    /**
-     * Set sujet
-     *
-     * @param string $sujet
-     *
-     * @return Message
-     */
-    public function setSujet($sujet)
-    {
-        $this->sujet = $sujet;
-
-        return $this;
-    }
-
-    /**
-     * Get sujet
-     *
-     * @return string
-     */
-    public function getSujet()
-    {
-        return $this->sujet;
     }
 
     /**
@@ -162,28 +124,5 @@ class Message
     {
         return $this->message;
     }
-
-    /**
-     * Set dateEnvoi
-     *
-     * @param \DateTime $dateEnvoi
-     *
-     * @return Message
-     */
-    public function setDateEnvoi($dateEnvoi)
-    {
-        $this->dateEnvoi = $dateEnvoi;
-
-        return $this;
-    }
-
-    /**
-     * Get dateEnvoi
-     *
-     * @return \DateTime
-     */
-    public function getDateEnvoi()
-    {
-        return $this->dateEnvoi;
-    }
 }
+
