@@ -43,11 +43,11 @@ class Utilisateur
     private $prenom;
 
     /**
-     * @var DateTime
+     * @var int
      *
-     * @ORM\Column(name="Date_de_naissance", type="date",length=255 , nullable=false)
+     * @ORM\Column(name="Age", type="integer",length=2 , nullable=false)
      */
-    private $dateDeNaissance;
+    private $age;
 
     /**
      * @var string
@@ -152,25 +152,25 @@ class Utilisateur
     /**
      * Set dateDeNaissance
      *
-     * @param string $dateDeNaissance
+     * @param integer $age
      *
      * @return Utilisateur
      */
-    public function setDateDeNaissance($dateDeNaissance)
+    public function setAge($age)
     {
-        $this->dateDeNaissance = $dateDeNaissance;
+        $this->age = $age;
 
         return $this;
     }
 
     /**
-     * Get dateDeNaissance
+     * Get age
      *
      * @return string
      */
-    public function getDateDeNaissance()
+    public function getAge()
     {
-        return $this->dateDeNaissance;
+        return $this->age;
     }
 
     /**
