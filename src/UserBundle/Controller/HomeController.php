@@ -38,6 +38,7 @@ class HomeController extends Controller
 		}
 
 		//Affichage des posts !!!
+		$compteur=0;
 		$tab = [];
 		$billet = $em->getRepository('ActuBundle:Post')->findByauteur($user);
 		
@@ -48,8 +49,8 @@ class HomeController extends Controller
 		 		'message'	=> $printpost 	->getBillet(),
 				'date' 		=> $printpost	->getdatePublication(),
 		 	);
+		 	$compteur ++;
 		}
-
 		// var_dump($printpost); exit;
 
         return $this->render('UserBundle:Home:home.html.twig',array(
@@ -57,6 +58,7 @@ class HomeController extends Controller
             'datauser'=>$repository,
         	'repo'=>$repo,
         	'postuser'=>$tab,
+        	'compteur'=>$compteur,
         ));
     }
 

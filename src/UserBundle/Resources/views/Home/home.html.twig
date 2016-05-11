@@ -3,44 +3,39 @@
 {% block body %}
 
 <div id="container">
+	<div class="row">
+		<div class="bloc_principal col-md-offset-1 col-md-7">
+			<div class="content">
+	       		<div class="section col-lg-12 col-md-12">
+	        		<div class="row">
+		        		<div class="profil1 col-lg-5">
+		 					<ul>
+		 						<li>Nom d'utilisateur : {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+	              				{{ app.user.username }}
+	             				 {% endif %}</li>
+								<li>Nom, prénom : {{ datauser.nom }} {{ datauser.prenom }}  </li>
+								<li>E-mail : {{ repo.email }} </li>
 
-		<div class="row">
-
-			<div class="bloc_principal col-md-offset-1 col-md-7">
-
-				<div class="content">
-
-	        <div class="section col-lg-12 col-md-12">
-	        	<div class="row">
-	        		<div class="profil1 col-lg-5">
-	 					<ul>
-	 						<li>Nom d'utilisateur : {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-              				{{ app.user.username }}
-             				 {% endif %}</li>
-							<li>Nom, prénom : {{ datauser.nom }} {{ datauser.prenom }}  </li>
-							<li>E-mail : {{ repo.email }} </li>
-
-						</ul>
-					</div>
-					<div class="profil2 col-lg-offset-1 col-lg-5">
-	 					<ul>
-	 						<li>Compte github : {{ datauser.github }} </li>
-							<li>Compte twitter : {{ datauser.twitter }}</li>
-							<li>Compte doyoubuzz : {{ datauser.doyoubuzz }}</li>
-							<li>Compte linkedin : {{ datauser.linkedin }}</li>
-						</ul>
-					</div>
+							</ul>
+						</div>
+						<div class="profil2 col-lg-offset-1 col-lg-5">
+		 					<ul>
+		 						<li>Compte github : {{ datauser.github }} </li>
+								<li>Compte twitter : {{ datauser.twitter }}</li>
+								<li>Compte doyoubuzz : {{ datauser.doyoubuzz }}</li>
+								<li>Compte linkedin : {{ datauser.linkedin }}</li>
+							</ul>
+						</div>
 					</div>
 					<div class="row bio">
 						<p class="text-center"> {{ datauser. biographie }} </p>
 					</div>
-	        </div>
-
-	        <div class="section col-lg-12 col-md-12">
-           <h2>Statistiques</h2>
-            <p>Nombre d'articles écrits : 12</p>
-            <p>Nombre de commentaires écrits : 17</p>
-	        </div>
+	       		</div>
+		        <div class="section col-lg-12 col-md-12">
+		           <h2>Statistiques</h2>
+		            <p>Nombre d'articles écrits : {{ compteur }}</p>
+		            <p>Nombre de commentaires écrits : 17</p>
+		        </div>
 	        	<form action="{{path ("user_home")}}" method="post">
 				  <fieldset class="form-group col-lg-12 col-md-12">
 				    <label for="exampleTextarea">Nouveau post :</label>
@@ -49,27 +44,24 @@
 				    <input type="submit" value="{{'Postez'|trans}}">
 				  </fieldset>
 				</form>
+		        <div class="sectionhome col-lg-12 col-md-12">
 
-	        <div class="sectionhome col-lg-12 col-md-12">
-			{% for x in postuser|reverse %}
-				<div class="post">
-	      			<p>{{ x['date']| date("H:i d/m/Y") }}</p>
-	      			<p>{{ x['message'] }}</p>
-      			</div>
-    			{% endfor %}
-	        </div>
+					{% for x in postuser|reverse %}
 
-	      </div>
+						<div class="post">
+			      			<p>{{ x['date']| date("H:i d/m/Y") }}</p>
+			      			<p>{{ x['message'] }}</p>
+		      			</div>
 
-			</div>
+		    		{% endfor %}
 
-      <div id="sidebar">
-            {{ render(controller('ActuBundle:Actu:sidebar')) }}
-      </div>
-
+			    </div>
+    		</div>
 		</div>
-
+	    <div id="sidebar">
+	            {{ render(controller('ActuBundle:Actu:sidebar')) }}
+	    </div>
 	</div>
-
 </div>
+
 {% endblock %}
